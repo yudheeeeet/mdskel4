@@ -14,11 +14,14 @@ ui <- fluidPage(
   titlePanel("Contoh Dashboard Shiny"),
   sidebarLayout(
     sidebarPanel(
+      h3("This is sidebar Panel"),
+      h4("Lets Build a Great App"),
       sliderInput("slider", "Pilih Nilai Slider:", min = 1, max = 100, value = 50),
       textInput("text", "Masukkan Teks:")
     ),
     mainPanel(
-      plotOutput("plot")
+      plotOutput("plot"),
+      h3("Plot Below is our work")
     )
   )
 )
