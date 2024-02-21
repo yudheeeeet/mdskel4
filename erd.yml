@@ -1,0 +1,41 @@
+# Tables and columns
+
+- table: Customer
+  columns:
+    CustomerID: {type: int, key: yes}
+    Gender: {type: varchar}
+    Location: {type: varchar}
+    Age: {type: int}
+
+- table: Pay_method
+  columns:
+    PMID: {type: int, key: yes}
+    Method: {type: varchar}
+
+- table: Voucher
+  columns:
+    VoucherID: {type: int, key: yes}
+    CustomerID: {fkey: yes, type: int, ref: Customer}
+    Coupon_Status: {type: varchar}
+    Coupon_Code: {type: varchar}
+    Discount: {type: int}
+
+- table: Transaction
+  columns:
+    TransactionID: {type: int, key: yes}
+    CustomerID: {fkey: yes, type: int, ref: Customer}
+    PMID: {fkey: yes, type: int, ref: Pay_method}
+    ProductID: {fkey: yes, type: int, ref: Product}
+    VoucherID: {fkey: yes, type: int, ref: Voucher}
+    Transaction_date: {type: date}
+    Total_Price: {type: double}
+    Quantity: {type: int}
+
+- table: Product
+  columns:
+    ProductID: {key: yes}
+    Product_Name: {type: varchar}
+    Product_Description: {type: varchar}
+    Product_Category: {type: varchar}
+    Stock: {type: int}
+    Price: {type: int}
