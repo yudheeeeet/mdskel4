@@ -1,0 +1,45 @@
+# Tables and columns
+
+- table: Customer
+  columns:
+    CustomerID: {key: yes}
+    TransactionID : {ref : Transaction}
+    Gender:
+    Location:
+    Age:
+
+- table: Pay_method
+  columns:
+    PMID: {key: yes}
+    TransactionID : {ref : Transaction}
+    Method:
+
+- table: Voucher
+  columns:
+    VoucherID: {key: yes}
+    CustomerID: {ref: Customer}
+    Coupon_Status:
+    Coupon_Code:
+    Discount:
+
+- table: Transaction
+  columns:
+    TransactionID: {key: yes}
+    CustomerID: {ref: Customer}
+    PMID: {ref: Pay_method}
+    ProductID: {ref: Product}
+    VoucherID: {ref: Voucher}
+    Line number: {key: yes}
+    Order item: {ref: Item}
+    Quantity:
+    Price:
+
+- table: Product
+  display: accent1
+  columns:
+    ProductID: {key: yes}
+    TransactionID: {ref : Transaction}
+    Product_Name:
+    Product_Category:
+    Quantity:
+    Price:
