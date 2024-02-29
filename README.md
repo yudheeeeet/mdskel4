@@ -32,3 +32,10 @@
 ## :scroll: Tentang
 
 Project akhir mata kuliah Manajemen Data Statistika mengambil topik tentang Database Online Shop. Project ini mengspesifikasikan analisis pola penjualan berbagai produk, customer, transaksi, metode pembayaran dan voucher yang disediakan dalam online shop. Kumpulan data yang digunakan dalam proyek ini bersumber dari Kaggle. Hasil yang diharapkan adalah terbentuknya sebuah platform manajemen database berupa web application yang dapat memudahkan user dalam menganalisis untuk meningkatkan dan mengoptimalkan strategi penjualan. User dapat mencari data berdasarkan kategori yang di inginkan, misalnya pencarian berbagai macam produk, voucher yang disediakan dan lain-lain.
+
+## :smiley_cat: Tim Pengembang
+
+- Backend Developer: [Rachmat Bintang Yudhianto](https://github.com/yudheeeeet) (G1501231030)
+- Database Manager: [Tasya Anisah Rizqi](https://github.com/tasyaanisahrizqi) (G1501231046)
+- Technical Writer: [Yunna Mentari Indah](https://github.com/yunnamentari) (G1501231017)
+- Frontend Developer: [Uswatun Hasanah](https://github.com/hhyuss) (G1501222040)
