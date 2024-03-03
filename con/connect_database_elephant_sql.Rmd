@@ -9,10 +9,10 @@ library(RPostgres)
 
 DB <- dbConnect(
   RPostgres::Postgres(),
-  dbname="fxrfzxqh",
-  host="topsy.db.elephantsql.com",
-  user="fxrfzxqh",
-  password="jRE1Mgd_PROKue2DjHJFHWTnubI4PlRD"
+  dbname="abmlblif",
+  host="rosie.db.elephantsql.com",
+  user="abmlblif",
+  password="eom11qi2S2qRJfGHJgHiuqRr0hOlM114"
 )
 ```
 
