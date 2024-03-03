@@ -18,7 +18,8 @@
 
 ## :bookmark_tabs: Menu
 
-- [Tentang](#scroll-tentang)
+- [Info](#scroll-tentang)
+- [Tentang](#blue_book-tentang)
 - [Screenshot](#rice_scene-screenshot)
 - [Demo](#dvd-demo)
 - [Dokumentasi](#blue_book-dokumentasi)
@@ -29,9 +30,9 @@
 - [Struktur Folder](#open_file_folder-struktur-folder)
 - [Tim Pengembang](#smiley_cat-tim-pengembang)
 
-## Info
+## :scroll: Info
 
-Sigmaria Market Online Shop adalah 
+Sigmaria Market Online Shop adalah sebuah platform yang menyediakan informasi lengkap tentang transaksi penjualan, produk yang tersedia, metode pembayaran yang digunakan, voucher yang tersedia, dan data pelanggan. Platform ini memungkinkan pengguna untuk menjelajahi dan memperoleh berbagai produk yang tersedia di Sigmaria Market. Dengan berbagai macam produk dan informasi tentang transaksi yang tercatat, Sigmaria Market menyajikan informasi terkini mengenai aktivitas pasar yang dapat membantu pengguna dalam melakukan pembelian yang diinginkan. Selain itu, platform ini juga menyediakan rekomendasi product yang sesuai untuk customer.
 
 
 ## :blue_book: Tentang
@@ -78,34 +79,30 @@ Berisi tentang tabel-tabel yang digunakan berikut dengan sintaks SQL DDL (CREATE
 ### Create Database
 Database Sigmaria Market Online Shop menyimpan informasi yang mewakili atribut data yang saling berhubungan untuk kemudian dianalisis.
 ```sql
-CREATE DATABASE sinta_jurnal
+CREATE DATABASE Online_Shop
     WITH
     OWNER = postgres
     ENCODING = 'UTF8'
     CONNECTION LIMIT = -1
     IS_TEMPLATE = False;
 ```
-### Create Table Instansi
-Table instansi memberikan informasi kepada user mengenai lembaga asal penulis jurnal sinta, sehingga user dapat mengetahui id instansi penulis, nama instansi penulis, jumlah penulis pada instansi tersebut, jumlah departemen pada instansi dan jumlah jurnal yang telah diterbitkan oleh setiap instansi. Berikut deskripsi untuk setiap tabel instansi.
+### Create Table Customer
+Table customer memberikan informasi kepada user mengenai data customer, sehingga user dapat mengetahui id customer, gender, lokasi yang mencakup 4 lokasi yaitu california, new york, chicago, new jersey dan umur dengan rentang 17 - 63 tahun. Berikut deskripsi untuk setiap tabel customer.
 | Attribute          | Type                  | Description                     |
 |:-------------------|:----------------------|:--------------------------------|
-| id_instansi        | character varying(10) | Id Instansi                     |
-| nama_instansi      | character varying(10) | Nama Instansi                   |
-| lokasi             | character varying(50) | Lokasi                          |
-| jumlah_penulis     | smallint 	     | Jumlah Penulis                  |
-| jumlah_depaetemen  | smallint		     | Jumlah Departemen               |
-| jumlah_journals    | smallint              | Jumlah Jurnal yang Diterbitkan  |
+| customerid         | character varying(11) | Id Customer                     |
+| gender             | character varying(11) | Jenis Kelamin                   |
+| locations          | text		     | Lokasi                          |
+| age		     | integer	 	     | Umur	                       |
 
 dengan script SQL sebagai berikut:
 ```sql
-CREATE TABLE IF NOT EXISTS public.instansi (
-    id_instansi varchar(10) NOT NULL,
-    nama_instansi varchar(100) NOT NULL,
-    lokasi varchar(200),
-	jumlah_penulis int,
-	jumlah_departement int,
-	jumlah_journals int,
-    PRIMARY KEY (id_instansi)
+CREATE TABLE IF NOT EXISTS public.Customer (
+    CustomerID character varying(11) NOT NULL,
+    Gender character varying(11) NOT NULL,
+    Locations text NOT NULL,
+	Age integer NOT NULL,
+    PRIMARY KEY (CustomerID)
 );
 ```
 ### Create Table Departement
