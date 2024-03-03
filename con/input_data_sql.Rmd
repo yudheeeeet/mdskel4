@@ -1,0 +1,135 @@
+---
+title: "Input Data ke SQL"
+output: html_notebook
+---
+
+```{r}
+library(DBI)
+library(RPostgres)
+
+DB <- dbConnect(
+  RPostgres::Postgres(),
+  dbname = "Online_Shop",
+  host = "localhost",
+  port = 5432,
+  user = "postgres",
+  password = "tarcbim26"
+)
+```
+
+```{r}
+data_customer <- read.csv("data_customer.csv")
+str(data_customer)
+```
+
+```{r}
+library(tidyverse)
+data_customer$CustomerID <- as.character(data_customer$CustomerID)
+data_customer$Gender <- as.character(data_customer$Gender)
+data_customer$Locations <- data_customer$Locations %>% gsub("'", "", .)
+data_customer$Age <- as.integer(data_customer$Age)
+
+for (i in 1:nrow(data_customer)){
+  query <- paste0("INSERT INTO customer (customerid, gender, locations, age) VALUES
+                  (","'", data_customer[i, ]$CustomerID, "',
+                  ","'", data_customer[i, ]$Gender, "',
+                  ","'",data_customer[i, ]$Locations,"',
+                  ","'",data_customer[i, ]$Age, "');")
+  query_execute <- DBI::dbGetQuery(conn = DB, statement = query)
+}
+```
+
+```{r}
+data_product <- read.csv("data_product.csv")
+str(data_product)
+```
+
+```{r}
+data_product$ProductID <- as.character(data_product$ProductID)
+data_product$Product_name <- data_product$Product_name %>% gsub("'", "", .)
+data_product$Product_Description <- data_product$Product_Description %>% gsub("'", "", .)
+data_product$Product_Category <- data_product$Product_Category %>% gsub("'", "", .)
+data_product$Stock <- as.integer(data_product$Stock)
+data_product$Price <- as.numeric(data_product$Price)
+
+for (i in 1:nrow(data_product)){
+  query <- paste0("INSERT INTO product (productid, product_name, product_description, 
+  product_category, stock, price) VALUES
+                  (","'", data_product[i, ]$ProductID, "',
+                  ","'", data_product[i, ]$Product_name, "',
+                  ","'",data_product[i, ]$Product_Description,"',
+                  ","'",data_product[i, ]$Product_Category,"',
+                  ","'",data_product[i, ]$Stock,"',
+                  ","'",data_product[i, ]$Price, "');")
+  query_execute <- DBI::dbGetQuery(conn = DB, statement = query)
+}
+```
+
+```{r}
+data_pay_method <- read.csv("data_pay_method.csv")
+str(data_pay_method)
+```
+
+```{r}
+data_pay_method$PMID <- as.character(data_pay_method$PMID)
+data_pay_method$Method_name <- data_pay_method$Method_name %>% gsub("'", "", .)
+
+for (i in 1:nrow(data_pay_method)){
+  query <- paste0("INSERT INTO pay_method (pmid, method_name) VALUES
+                  (","'", data_pay_method[i, ]$PMID, "',
+                  ","'", data_pay_method[i, ]$Method_name, "');")
+  query_execute <- DBI::dbGetQuery(conn = DB, statement = query)
+}
+```
+
+```{r}
+data_voucher <- read.csv("data_voucher.csv")
+str(data_voucher)
+```
+
+```{r}
+data_voucher$VoucherID <- as.character(data_voucher$VoucherID)
+data_voucher$Voucher_name <- data_voucher$Voucher_name %>% gsub("'", "", .)
+data_voucher$Discount <- as.integer(data_voucher$Discount)
+
+for (i in 1:nrow(data_voucher)){
+  query <- paste0("INSERT INTO voucher (voucherid, voucher_name, discount)
+  VALUES
+                  (","'", data_voucher[i, ]$VoucherID, "',
+                  ","'", data_voucher[i, ]$Voucher_name, "',
+                  ","'",data_voucher[i, ]$Discount, "');")
+  query_execute <- DBI::dbGetQuery(conn = DB, statement = query)
+}
+```
+
+```{r}
+data_transaction <- read.csv("data_transaction.csv")
+str(data_transaction)
+```
+
+```{r}
+data_transaction$TransactionID <- as.character(data_transaction$TransactionID)
+data_transaction$Transaction_Date <- as.Date(data_transaction$Transaction_Date, format="")
+data_transaction$Total_Price <- as.numeric(data_transaction$Total_Price)
+data_transaction$Quantity <- as.integer(data_transaction$Quantity)
+data_transaction$CustomerID <- as.character(data_transaction$CustomerID)
+data_transaction$ProductID <- as.character(data_transaction$ProductID)
+data_transaction$PMID <- as.character(data_transaction$PMID)
+data_transaction$VoucherID <- as.character(data_transaction$VoucherID)
+data_transaction$Voucher_status <- data_transaction$Voucher_status %>% gsub("'", "", .)
+
+for (i in 1:nrow(data_voucher)){
+  query <- paste0("INSERT INTO transaction (transactionid, transaction_date, total_price, quantity,
+  customerid, productid, pmid, voucherid, voucher_status) VALUES
+                  (","'", data_transaction[i, ]$TransactionID, "',
+                  ","'", data_transaction[i, ]$Transaction_Date, "',
+                  ","'",data_transaction[i, ]$Total_Price,"',
+                  ","'",data_transaction[i, ]$Quantity,"',
+                  ","'",data_transaction[i, ]$CustomerID,"',
+                  ","'",data_transaction[i, ]$ProductID,"',
+                  ","'",data_transaction[i, ]$PMID,"',
+                  ","'",data_transaction[i, ]$VoucherID,"',
+                  ","'",data_transaction[i, ]$Voucher_status, "');")
+  query_execute <- DBI::dbGetQuery(conn = DB, statement = query)
+}
+```

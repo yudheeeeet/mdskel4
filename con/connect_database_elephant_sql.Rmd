@@ -1,0 +1,41 @@
+---
+title: "Koneksi Database ke Elephant SQL"
+output: html_notebook
+---
+
+```{r}
+library(DBI)
+library(RPostgres)
+
+DB <- dbConnect(
+  RPostgres::Postgres(),
+  dbname="fxrfzxqh",
+  host="topsy.db.elephantsql.com",
+  user="fxrfzxqh",
+  password="jRE1Mgd_PROKue2DjHJFHWTnubI4PlRD"
+)
+```
+
+```{r}
+dbhost <- dbConnect(
+  RPostgres::Postgres(),
+  dbname = "Online_Shop",
+  host = "localhost",
+  port = 5432,
+  user = "postgres",
+  password = "tarcbim26"
+)
+```
+
+```{r}
+cust=dbReadTable(dbhost,'customer')
+prod=dbReadTable(dbhost,'product')
+pm=dbReadTable(dbhost,'pay_method')
+vou=dbReadTable(dbhost,'voucher')
+tran=dbReadTable(dbhost,'transaction')
+dbWriteTable(DB,'customer',cust,overwrite=T,row.names=F)
+dbWriteTable(DB,'product',prod,overwrite=T,row.names=F)
+dbWriteTable(DB,'pay_method',pm,overwrite=T,row.names=F)
+dbWriteTable(DB,'voucher',vou,overwrite=T,row.names=F)
+dbWriteTable(DB,'transaction',tran,overwrite=T,row.names=F)
+```
