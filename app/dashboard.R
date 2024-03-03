@@ -1,17 +1,21 @@
 library(shiny)
-library(tidyverse)
 library(shinydashboard)
 library(shinydashboardPlus)
-library(rvest)
+library(RPostgreSQL)
+library(DBI)
 library(DT)
-library(plotly)
+library(bs4Dash)
+library(dplyr)
+library(fontawesome)
 
-ui <-fluidPage( 
+#=========================== Interface (Front-End) ============================#
+
+fluidPage (
   dashboardPage (
     
     #--------------HEADER-----------------#
     header = dashboardHeader(
-      title = span(img(src="https://raw.githubusercontent.com/yudheeeeet/mdskel4/main/Image/logo.png",
+      title = span(img(src="https://raw.githubusercontent.com/rahmiandr/kelompok3_MDS/main/image/logobaru.png",
                        height = 35))
     ),
     #------------SIDEBAR-----------------#
@@ -54,11 +58,10 @@ ui <-fluidPage(
     body = dashboardBody(
       tabItems(
         #-------------------------Tab Beranda-------------------------#
-        tags$div(
-          class = "tab-pane",
-          tabName = "beranda",
-          h1(
-            title = span("SIGMARIA MARKET1", style = "font-size:46px;font-weight:bold;"),
+        tabItem(
+          tabName = "b=beranda",
+          jumbotron(
+            title = span("SIGMARIA MARKET1",style = "font-size:46px;font-weight:bold;"),
             lead = "Selamat Datang di Sigmaria Market Database!", 
             span("Sigmaria Market adalah sebuah platform yang menyediakan informasi lengkap tentang transaksi penjualan, produk yang tersedia, metode pembayaran yang digunakan, voucher yang tersedia, dan data pelanggan. Platform ini memungkinkan pengguna untuk menjelajahi dan memperoleh berbagai produk yang tersedia di Sigmaria Market. Dengan berbagai macam produk dan informasi tentang transaksi yang tercatat, Sigmaria Market menyajikan informasi terkini mengenai aktivitas pasar yang dapat membantu pengguna dalam melakukan pembelian yang diinginkan. Selain itu, platform ini juga menyediakan rekomendasi product yang sesuai untuk customer. ",
                  style = "font-size:20px;text-align:justify;"),
@@ -67,7 +70,7 @@ ui <-fluidPage(
           ),
           tags$h2("Panduan"),
           tags$p("Arahkan kursor ke sisi kiri layar atau klik ikon garis tiga pada sisi pojok kanan atas untuk mengakses bilah sisi (side bar). 
-           Empat fitur utama pada Sigmaria Market adalah sebagai berikut,"),
+                 Empat fitur utama pada Sigmaria Market adalah sebagai berikut,"),
           tags$ol(
             tags$li("Cari Transaksi"),
             tags$p("Gunakan fitur pencarian transaksi untuk menemukan transaksi berdasarkan kriteria tertentu seperti tanggal, jumlah, atau jenis transaksi. Anda dapat menggunakan filter untuk menemukan transaksi yang relevan dengan kebutuhan Anda."),
@@ -86,7 +89,7 @@ ui <-fluidPage(
           ), 
           tags$h2("Info Pengembang Situs"),
           tags$p("Situs ini merupakan projek praktikum kelompok mata kuliah Manajemen Data Statistika (STA1582) dari Program Statistika dan Sains Data Pascasarjana IPB University.
-           Tim pengembang situs adalah sebagai berikut,"),
+                 Tim pengembang situs adalah sebagai berikut,"),
           tags$ul(
             tags$li("Tasya sebagai Database Manager"),
             tags$li("Uswatun Hasanah sebagai Frontend Developer"),
@@ -98,8 +101,7 @@ ui <-fluidPage(
         ),
         
         #--------------------------Tab Transaksi--------------------------#
-        tags$div(
-          class = "tab-pane",
+        tabItem(
           tabName = "transactions",
           fluidRow(
             tags$h1("Pencarian Transaksi"),
@@ -141,8 +143,7 @@ ui <-fluidPage(
         ),
         
         #-------------------------Tab Produk-------------------------#
-        tags$div(
-          class = "tab-pane",
+        tabItem(
           tabName = "products",
           fluidRow(
             tags$h1("Pencarian Produk"),
@@ -184,8 +185,7 @@ ui <-fluidPage(
         ),
         
         #-------------------------Tab Metode Pembayaran-------------------------#
-        tags$div(
-          class = "tab-pane",
+        tabItem(
           tabName = "payment_methods",
           fluidRow(
             tags$h1("Pencarian Metode Pembayaran"),
@@ -219,8 +219,7 @@ ui <-fluidPage(
         ),
         
         #-------------------------Tab Voucher-------------------------#
-        tags$div(
-          class = "tab-pane",
+        tabItem(
           tabName = "vouchers",
           fluidRow(
             tags$h1("Pencarian Voucher"),
@@ -254,8 +253,7 @@ ui <-fluidPage(
         ),
         
         #-------------------------Tab Pelanggan-------------------------#
-        tags$div(
-          class = "tab-pane",
+        tabItem(
           tabName = "customers",
           fluidRow(
             tags$h1("Pencarian Pelanggan"),
@@ -286,8 +284,13 @@ ui <-fluidPage(
               width = 12
             )
           )
+        ),
+        
+        #-----------------FOOTER-----------------#
+        footer = dashboardFooter(
+          left = "by Kelompok 4",
+          right = "Bogor, 2024"
         )
       )
     )
   )
-)
