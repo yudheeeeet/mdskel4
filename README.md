@@ -105,112 +105,95 @@ CREATE TABLE IF NOT EXISTS public.Customer (
     PRIMARY KEY (CustomerID)
 );
 ```
-### Create Table Departement
-Table departemen memberikan informasi yang memudahkan user mengetahui asal penulis melalui id departemen penulis, id instansi penulis dan nama departemen penulis terkait. Id departemen adalah kode yang digunakan untuk membedakan nama departemen yang sama pada tiap instansi. Berikut deskripsi untuk setiap tabel departemen.
+### Create Table Pay_Method
+Table pay_method memberikan informasi kepada user untuk mengetahui terkait metode pembayaran yang terdiri dari 4 metode yaitu card, paypal, digital wallets dan lainnya melalui pmid dan nama metode dari masing-masing id. Berikut deskripsi untuk setiap tabel pay_method.
 | Attribute          | Type                  | Description                     |
 |:-------------------|:----------------------|:--------------------------------|
-| id_dept            | character varying(10) | Id Departemen                   |
-| id_instansi        | character varying(10) | Id Instansi                     |
-| nama_instansi      | character varying(50) | Nama Instansi                   |
+| pmid               | character varying(11) | Id pay method                   |
+| method_name        | text		     | nama metode pembayaran	       |
 
 dengan script SQL sebagai berikut:
 ```sql
-CREATE TABLE IF NOT EXISTS public.departemen (
-    id_dept varchar(10) COLLATE pg_catalog."default" NOT NULL,
-    id_instansi varchar(10) COLLATE pg_catalog."default" NOT NULL,
-    nama_departemen varchar(100),
-    CONSTRAINT departemen_pkey PRIMARY KEY (id_dept),
-    CONSTRAINT departemen_id_instansi_fkey FOREIGN KEY (id_instansi)
-        REFERENCES public.instansi (id_instansi) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
+CREATE TABLE IF NOT EXISTS public.Pay_method (
+    PMID character varying(11) NOT NULL,
+    Method_name text NOT NULL,
+    Voucher_status text NOT NULL,
+	Discount integer NOT NULL,
+	CustomerID character varying(11) NOT NULL,
+	PRIMARY KEY (PMID),
+	FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
 );
 ```
-### Create Table Penulis
-Table penulis memberikan informasi kepada user mengenai beberapa identitas penulis jurnal. User dapat mengetahui id sinta dari penulis, nama penulis jurnal, asal penulis melalui id instnasi dan id departemen. Selain itu, terdapat informasi mengenai jumlah artikel yang telah diterbitkan oleh penulis baik terindeks scopus maupun google scholar. Berikut deskripsi untuk setiap tabel penulis.
+### Create Table Product
+Table produk memberikan informasi kepada user mengenai produk pada sigmaria market. User dapat mengetahui id produk, nama produk, deskripsi produk, kategori produk, jumlah stok tiap produk, dan harga dari masing-masing produk. Berikut deskripsi untuk setiap tabel penulis.
 | Attribute                  | Type                  | Description                     		       |
 |:---------------------------|:----------------------|:------------------------------------------------|
-| id_sinta                   | character varying(10) | Id Sinta                       		       |
-| nama_penulis               | character varying(100)| Nama Penulis                   		       |
-| id_instansi                | character varying(10) | Id Instansi                     		       |	
-| id_dept                    | character varying(10) | Id Departemen                 		       |
-| subject_list               | character varying(150)| Bidang Ilmu yang Dikuasai Penulis               |
-| sinta_score_ovr    	     | smallint              | Jumlah Skor Sinta                               |
-| jumlah_article_scopus      | smallint		     | Jumlah Artikel yang Terbitkan oleh Scopus       |
-| jumlah_article_gscholar    | smallint              | Jumlah Artikel yang Terbitkan oleh Google Sholar|
+| productid                  | character varying(20) | Id Produk                       		       |
+| product_name               | text		     | Nama Produk                   		       |
+| product_description        | text		     | Deskripsi Produk                      	       |	
+| product_category           | text		     | Kategori Produk                 		       |
+| stock	                     | integer		     | Jumlah Stok dari Setiap Produk	               |
+| price		    	     | numeric               | Harga dari Masing-Masing Produk                 |
 
 dengan script SQL sebagai berikut:
 ```sql
-CREATE TABLE IF NOT EXISTS public.penulis (
-    id_sinta varchar(10) COLLATE pg_catalog."default" NOT NULL,
-    nama_penulis char(100) NOT NULL, 
-    id_instansi varchar(10) COLLATE pg_catalog."default" NOT NULL,
-    id_dept varchar(10) COLLATE pg_catalog."default" NOT NULL,
-    subject_list varchar(200),
-    sinta_score_ovr int,
-    jumlah_article_scopus int,
-    jumlah_article_gscholar int,
-    CONSTRAINT penulis_pkey PRIMARY KEY (id_sinta),
-    CONSTRAINT penulis_id_instansi_fkey FOREIGN KEY (id_instansi)
-        REFERENCES public.instansi (id_instansi) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION,
-    CONSTRAINT penulis_id_departemen_fkey FOREIGN KEY (id_dept)
-        REFERENCES public.departemen (id_dept) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
+CREATE TABLE IF NOT EXISTS public.Product (
+    ProductID character varying(20) NOT NULL,
+    Product_name text NOT NULL,
+    Product_Description text NOT NULL,
+	Product_Category text NOT NULL,
+	Stock integer NOT NULL,
+	Price numeric NOT NULL,
+    PRIMARY KEY (ProductID)
 );
 ```
-### Create Table Judul
-Table judul menyajikan informasi lengkap mengenai sebuah artikel. Selain dapat mengetahui judul, user juga akan mendapatkan informasi doi dan tahun terbit sebuah artikel. Nama penulis, team penulis hingga urutan penulis tersaji pada table ini. Tidak hanya itu, akan ditampilkan pula nama penerbit dan nama jurnal yang dipercayakan penulis untuk mempublikasikan karyanya. Lebih lanjut, informasi spesifik mengenai id sinta, id departemen, id instansi dan id paper dapat diketahui melalui table ini.  Berikut deskripsi untuk setiap tabel judul.
+### Create Table Voucher
+Table voucher menyajikan informasi lengkap mengenai sebuah voucher. Selain dapat mengetahui jumlah produk, user juga akan mendapatkan informasi mengenai voucher yang tersedia. Informasi voucher yang didapatkan berupa nama voucher dan besaran diskon dari voucher tersebut.  Berikut deskripsi dari tabel voucher.
 | Attribute                  | Type                  | Description                     		       |
 |:---------------------------|:----------------------|:------------------------------------------------|
-| id_sinta                   | character varying(10) | Id Sinta                       		       |
-| id_instansi                | character varying(10) | Id Instansi                  		       |
-| id_dept                    | character varying(10) | Id Departemen                   		       |	
-| id_paper                   | character varying(10) | Id Jurnal/Artikel                	       |
-| judul_paper                | character varying(200)| Judul Paper                                     |
-| nama_penerbit    	     | character varying(100)| Nama Penerbit                                   |
-| nama_journal               | character varying(100)| nama_journal     			       |
-| jenulis_ke		     | smallint              | Urutan Nama Penulis pada Jurnal		       |
-| jumlah_penulis             | smallint		     | Jumlah Penulis                    	       |
-| team_penulis               | character varying(100)| Nama-Nama Penulis                               |
-| tahun_terbit    	     | character varying(4)  | Tahun Terbit                                    |
-| doi	                     | character varying(50) | Tautan Persisten yang Menghubungkan ke Jurnal   |
-| accred		     | character varying(10) | Akreditasi            			       |
+| voucherid                  | character varying(11) | Id Voucher                       	       |
+| voucher_name               | text		     | Nama Voucher                  		       |
+| discount                   | integer		     | Besaran Diskon dari Setiap Voucher              |	
 
 dengan script SQL sebagai berikut:              
 ```sql
-CREATE TABLE IF NOT EXISTS public.judul (
-    id_sinta varchar(10) COLLATE pg_catalog."default" NOT NULL,
-    id_instansi varchar(10) COLLATE pg_catalog."default" NOT NULL,
-    id_dept varchar(10) COLLATE pg_catalog."default" NOT NULL, 
-    id_paper varchar(10) COLLATE pg_catalog."default" NOT NULL,  
-    judul_paper char(500) NOT NULL,
-    nama_penerbit char(500),
-    nama_journal char(500),
-    penulis_ke int,
-    jumlah_penulis int,
-    team_penulis char(500),
-    tahun_terbit char(4),
-    doi char(100),
-    accred char(50),    
-    CONSTRAINT judul_pkey PRIMARY KEY (id_paper),
-    CONSTRAINT judul_id_penulis_fkey FOREIGN KEY (id_sinta)
-        REFERENCES public.penulis (id_sinta) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION,
-    CONSTRAINT judul_id_instansi_fkey FOREIGN KEY (id_instansi)
-        REFERENCES public.instansi (id_instansi) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION,
-    CONSTRAINT judul_id_dept_fkey FOREIGN KEY (id_dept)
-        REFERENCES public.departemen (id_dept) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
-    );
-```
+CREATE TABLE IF NOT EXISTS public.Voucher (
+    VoucherID character varying(11) NOT NULL,
+    Voucher_name text NOT NULL,
+    Voucher_status text NOT NULL,
+	Discount integer NOT NULL,
+	CustomerID character varying(11) NOT NULL,
+	PRIMARY KEY (VoucherID),
+	FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
+);
 
+```
+### Create Table Transaction
+Table transaction menyajikan informasi mengenai transaksi. User dapat mengetahui id transaksi, tanggal transaksi, total harga dari tiap transaksi, quantitiy, id customer, id product, pay method id, voucher id, status voucher.  Berikut deskripsi untuk setiap tabel transaction.
+| Attribute                  | Type                  | Description                     		       |
+|:---------------------------|:----------------------|:------------------------------------------------|
+| transactionid              | character varying(20) | Id Transaksi                       	       |
+| transaction_date           | date		     | Tanggal Transaksi                  	       |
+| total_price                | numeric		     | Total Harga dari Tiap Transaksi                 |	
+| quantity                   | integer		     | Jumlah Produk	                	       |
+| customerid                 | character varying(11) | Id Customer                                     |
+| productid    	    	     | character varying(20) | Id Produk	                               |
+| pmid	                     | character varying(11) | Id Pay Method     			       |
+| voucherid		     | character varying(11) | Id Voucher				       |
+| voucher_status             | text		     | Status Voucher                   	       |
+
+dengan script SQL sebagai berikut:
+```sql
+CREATE TABLE IF NOT EXISTS public.Voucher (
+    VoucherID character varying(11) NOT NULL,
+    Voucher_name text NOT NULL,
+    Voucher_status text NOT NULL,
+	Discount integer NOT NULL,
+	CustomerID character varying(11) NOT NULL,
+	PRIMARY KEY (VoucherID),
+	FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
+);
+```
 ## :open_file_folder: Struktur Folder
 
 ```
