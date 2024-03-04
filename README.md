@@ -6,16 +6,6 @@
 
 # Database Penjualan Sigmaria Market
 
-[Tentang](#scroll-tentang)
-•
-[Screenshot](#rice_scene-screenshot)
-•
-[Demo](#dvd-demo)
-•
-[Dokumentasi](#blue_book-dokumentasi)
-
-</div>
-
 ## :bookmark_tabs: Menu
 
 - [Info](#scroll-tentang)
