@@ -5,6 +5,7 @@
 <div align="center">
 
 # Database Penjualan Sigmaria Market
+</div>
 
 ## :bookmark_tabs: Menu
 
