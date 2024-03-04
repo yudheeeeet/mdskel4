@@ -22,7 +22,6 @@
 - [Tentang](#blue_book-tentang)
 - [Screenshot](#rice_scene-screenshot)
 - [Demo](#dvd-demo)
-- [Dokumentasi](#blue_book-dokumentasi)
 - [Requirements](#exclamation-requirements)
 - [Skema Database](#floppy_disk-skema-database)
 - [ERD](#rotating_light-erd)
@@ -198,18 +197,20 @@ CREATE TABLE IF NOT EXISTS public.Voucher (
 
 ```
 .
+├── Image
 ├── app           # ShinyApps
 │   ├── css
 │   │   ├── **/*.css
 │   ├── server.R
 │   └── ui.R
+├── con
 ├── data 
 │   ├── csv
 │   │   ├── **/*.css
 │   └── sql
 |       └── db.sql
-├── src           # Project source code
 ├── doc           # Doc for the project
+├── src           # Project source code
 ├── .gitignore
 ├── LICENSE
 └── README.md
