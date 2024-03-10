@@ -6,7 +6,7 @@
 
 
 # SIGMARIA MARKET
-# "Big Choices, Big Deals"
+# _"Big Choices, Big Deals"_
 </div>
 
 ## :bookmark_tabs: Menu
