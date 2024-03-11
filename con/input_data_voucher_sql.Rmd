@@ -1,0 +1,51 @@
+---
+title: "input_data_voucher"
+author: "Rachmat Bintang Yudhianto"
+date: "2024-03-10"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+library(DBI)
+library(RPostgres)
+
+DB <- dbConnect(
+  RPostgres::Postgres(),
+  dbname = "MDS",
+  host = "localhost",
+  port = 5432,
+  user = "postgres",
+  password = "Ydth_2000"
+)
+```
+
+
+```{r}
+data_voucher <- read.csv("data_voucher.csv")
+str(data_voucher)
+```
+
+```{r}
+data_voucher$VoucherID <- as.character(data_voucher$VoucherID)
+data_voucher$Voucher_name <- data_voucher$Voucher_name %>% gsub("'", "", .)
+data_voucher$Discount <- as.integer(data_voucher$Discount)
+
+for (i in 1:nrow(data_voucher)){
+  query <- paste0("INSERT INTO voucher (voucherid, voucher_name, discount)
+  VALUES
+                  (","'", data_voucher[i, ]$VoucherID, "',
+                  ","'", data_voucher[i, ]$Voucher_name, "',
+                  ","'",data_voucher[i, ]$Discount, "');")
+  query_execute <- DBI::dbGetQuery(conn = DB, statement = query)
+}
+```
+
+
