@@ -1,12 +1,7 @@
 VoucherID,Voucher_name,Discount
-BT10,Discount 10%,10
 ELEC10,Discount 10%,10
-ELEC20,Discount 20%,20
 ELEC30,Discount 30%,30
-NE30,Discount 30%,30
-OFF10,Discount 10%,10
 OFF20,Discount 20%,20
-OFF30,Discount 30%,30
-SALE30,Discount 30%,30
-WEMP10,Discount 10%,10
-WEMP30,Discount 30%,30
+ELEC40,Discount 40%,40
+ELEC05,Discount 5%,5
+BT10,Discount 10%,10
