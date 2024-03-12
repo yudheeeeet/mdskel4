@@ -16,6 +16,17 @@ library(plotly)
 
 library(shiny)
 
+library(DBI)
+library(RPostgres)
+
+DB <- dbConnect(
+  RPostgres::Postgres(),
+  dbname="abmlblif",
+  host="rosie.db.elephantsql.com",
+  user="abmlblif",
+  password="eom11qi2S2qRJfGHJgHiuqRr0hOlM114"
+)
+
 # Define server logic required to draw a histogram
 function(input, output, session) {
 
@@ -33,3 +44,5 @@ function(input, output, session) {
     })
 
 }
+
+

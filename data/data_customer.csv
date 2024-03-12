@@ -51,6 +51,75 @@ CustomerID,Gender,Locations,Age
 12530,Female,California,63
 12531,Female,California,41
 12532,Female,California,19
+14606,Female,Chicago,22
+14607,Female,Chicago,29
+14608,Female,Chicago,32
+14609,Female,Chicago,41
+14610,Male,New York,50
+14611,Male,New York,56
+14612,Male,New York,30
+14614,Male,California,30
+14714,Male,Chicago,28
+14715,Male,Chicago,50
+14716,Male,Chicago,54
+14717,Male,Chicago,46
+14718,Male,Chicago,16
+14719,Male,Chicago,49
+14720,Male,Chicago,52
+14721,Male,Chicago,47
+14722,Male,Chicago,28
+14723,Male,Chicago,28
+14724,Male,Chicago,37
+14725,Male,Chicago,27
+14726,Female,Chicago,62
+14727,Female,Chicago,18
+14728,Female,Chicago,35
+14729,Female,Chicago,36
+14730,Female,Chicago,50
+14731,Female,Chicago,18
+14732,Female,Chicago,17
+15601,Female,Chicago,49
+15602,Female,Chicago,19
+15603,Female,Chicago,44
+15604,Female,Chicago,48
+15605,Female,Chicago,31
+15606,Female,Chicago,49
+15607,Female,New York,37
+15608,Female,New York,26
+15609,Female,New York,50
+15610,Female,New York,59
+15611,Female,New York,53
+15612,Female,New York,36
+15613,Female,New York,51
+15614,Female,New York,20
+15615,Male,New York,37
+15616,Male,Chicago,37
+15617,Male,Chicago,25
+15618,Male,Chicago,26
+15619,Male,Chicago,50
+15620,Male,Chicago,63
+15621,Female,California,47
+15622,Female,California,29
+15623,Female,California,52
+15624,Female,Chicago,20
+15625,Female,Chicago,38
+15626,Female,Chicago,16
+15627,Female,Chicago,42
+15628,Female,Chicago,24
+15629,Female,Chicago,26
+15630,Female,Chicago,35
+15631,Female,Chicago,46
+15632,Female,Chicago,50
+15633,Female,Chicago,28
+15634,Female,Chicago,40
+15635,Male,Chicago,48
+15636,Male,Chicago,53
+15637,Female,California,25
+15638,Female,Chicago,58
+15639,Female,Chicago,47
+15640,Female,Chicago,39
+15641,Female,Chicago,40
+15642,Female,Chicago,20
 16218,Male,Chicago,57
 16219,Male,Chicago,52
 16220,Male,Chicago,55
@@ -114,175 +183,6 @@ CustomerID,Gender,Locations,Age
 16278,Female,California,45
 16279,Female,California,46
 16280,Female,California,33
-14606,Female,Chicago,22
-14607,Female,Chicago,29
-14608,Female,Chicago,32
-14609,Female,Chicago,41
-14610,Male,New York,50
-14611,Male,New York,56
-14612,Male,New York,30
-14613,Male,California,41
-14614,Male,California,30
-14615,Male,California,23
-14616,Male,California,54
-14617,Male,California,45
-14618,Male,California,43
-14619,Male,California,29
-14620,Male,California,35
-14621,Male,California,29
-14622,Male,California,29
-14623,Male,New Jersey,40
-14624,Male,New Jersey,53
-14625,Male,New Jersey,47
-14626,Female,New York,60
-14627,Female,New York,36
-14628,Female,New York,43
-14629,Female,New York,63
-14630,Female,New York,19
-14631,Male,Chicago,26
-14632,Male,Chicago,54
-14633,Male,Chicago,16
-14634,Male,Chicago,26
-14635,Male,Chicago,48
-14636,Male,Chicago,59
-14637,Male,Chicago,20
-14638,Male,Chicago,39
-14639,Male,Chicago,47
-14640,Male,Chicago,56
-14641,Male,Chicago,20
-14642,Male,Chicago,28
-14643,Male,Chicago,38
-14644,Male,Chicago,57
-14645,Male,Chicago,35
-14646,Male,Chicago,24
-14647,Male,Chicago,40
-14648,Male,Chicago,63
-14649,Male,Chicago,19
-14650,Male,Chicago,52
-14651,Male,Chicago,56
-14652,Male,Chicago,56
-14653,Male,Chicago,47
-14654,Male,California,42
-14655,Male,California,27
-14656,Male,California,43
-14657,Male,California,54
-14658,Male,California,52
-14659,Male,California,19
-14660,Male,California,22
-14661,Male,California,49
-14662,Male,California,35
-14663,Male,California,47
-14664,Male,California,44
-14665,Male,California,35
-14666,Male,California,24
-14667,Female,Chicago,16
-14668,Female,Chicago,27
-14669,Female,Chicago,53
-14670,Female,Chicago,26
-14671,Female,Chicago,45
-14672,Female,Chicago,39
-14673,Female,Chicago,57
-14674,Female,Chicago,42
-14675,Female,New York,37
-14676,Female,New York,58
-14677,Female,New York,43
-14678,Female,New York,24
-14679,Female,New York,56
-14680,Female,New York,62
-14681,Female,New York,53
-14682,Female,New York,45
-14683,Female,New York,48
-14684,Female,New York,16
-14685,Female,New York,62
-14686,Female,New York,22
-14687,Female,New York,52
-14688,Female,New York,18
-14689,Female,New York,39
-14690,Female,New York,57
-14691,Female,New York,61
-14692,Female,New York,17
-14693,Female,New York,62
-14694,Female,New York,50
-14695,Female,New York,26
-14696,Female,New York,49
-14697,Male,California,63
-14698,Male,California,23
-14699,Male,California,63
-14700,Male,California,59
-14701,Male,California,60
-14702,Male,California,25
-14703,Male,California,50
-14704,Male,California,52
-14705,Male,California,19
-14706,Female,Chicago,33
-14707,Female,Chicago,45
-14708,Female,Chicago,57
-14709,Male,Chicago,45
-14710,Male,Chicago,54
-14711,Male,Chicago,62
-14712,Male,Chicago,49
-14713,Male,Chicago,63
-14714,Male,Chicago,28
-14715,Male,Chicago,50
-14716,Male,Chicago,54
-14717,Male,Chicago,46
-14718,Male,Chicago,16
-14719,Male,Chicago,49
-14720,Male,Chicago,52
-14721,Male,Chicago,47
-14722,Male,Chicago,28
-14723,Male,Chicago,28
-14724,Male,Chicago,37
-14725,Male,Chicago,27
-14726,Female,Chicago,62
-14727,Female,Chicago,18
-14728,Female,Chicago,35
-14729,Female,Chicago,36
-14730,Female,Chicago,50
-14731,Female,Chicago,18
-14732,Female,Chicago,17
-15601,Female,Chicago,49
-15602,Female,Chicago,19
-15603,Female,Chicago,44
-15604,Female,Chicago,48
-15605,Female,Chicago,31
-15606,Female,Chicago,49
-15607,Female,New York,37
-15608,Female,New York,26
-15609,Female,New York,50
-15610,Female,New York,59
-15611,Female,New York,53
-15612,Female,New York,36
-15613,Female,New York,51
-15614,Female,New York,20
-15615,Male,New York,37
-15616,Male,Chicago,37
-15617,Male,Chicago,25
-15618,Male,Chicago,26
-15619,Male,Chicago,50
-15620,Male,Chicago,63
-15621,Female,California,47
-15622,Female,California,29
-15623,Female,California,52
-15624,Female,Chicago,20
-15625,Female,Chicago,38
-15626,Female,Chicago,16
-15627,Female,Chicago,42
-15628,Female,Chicago,24
-15629,Female,Chicago,26
-15630,Female,Chicago,35
-15631,Female,Chicago,46
-15632,Female,Chicago,50
-15633,Female,Chicago,28
-15634,Female,Chicago,40
-15635,Male,Chicago,48
-15636,Male,Chicago,53
-15637,Female,California,25
-15638,Female,Chicago,58
-15639,Female,Chicago,47
-15640,Female,Chicago,39
-15641,Female,Chicago,40
-15642,Female,Chicago,20
 17850,Male,Chicago,52
 17851,Male,Chicago,49
 17852,Male,Chicago,23
