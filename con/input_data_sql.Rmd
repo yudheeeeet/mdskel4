@@ -3,17 +3,19 @@ title: "Input Data ke SQL"
 output: html_notebook
 ---
 
+
+
 ```{r}
 library(DBI)
 library(RPostgres)
 
 DB <- dbConnect(
   RPostgres::Postgres(),
-  dbname = "Online_Shop",
+  dbname = "MDS",
   host = "localhost",
   port = 5432,
   user = "postgres",
-  password = "tarcbim26"
+  password = "Ydth_2000"
 )
 ```
 
@@ -88,6 +90,7 @@ str(data_voucher)
 ```
 
 ```{r}
+library(tidyverse)
 data_voucher$VoucherID <- as.character(data_voucher$VoucherID)
 data_voucher$Voucher_name <- data_voucher$Voucher_name %>% gsub("'", "", .)
 data_voucher$Discount <- as.integer(data_voucher$Discount)
@@ -101,7 +104,6 @@ for (i in 1:nrow(data_voucher)){
   query_execute <- DBI::dbGetQuery(conn = DB, statement = query)
 }
 ```
-
 ```{r}
 data_transaction <- read.csv("data_transaction.csv")
 str(data_transaction)
@@ -118,7 +120,7 @@ data_transaction$PMID <- as.character(data_transaction$PMID)
 data_transaction$VoucherID <- as.character(data_transaction$VoucherID)
 data_transaction$Voucher_status <- data_transaction$Voucher_status %>% gsub("'", "", .)
 
-for (i in 1:nrow(data_voucher)){
+for (i in 1:nrow(data_transaction)){
   query <- paste0("INSERT INTO transaction (transactionid, transaction_date, total_price, quantity,
   customerid, productid, pmid, voucherid, voucher_status) VALUES
                   (","'", data_transaction[i, ]$TransactionID, "',
@@ -133,3 +135,4 @@ for (i in 1:nrow(data_voucher)){
   query_execute <- DBI::dbGetQuery(conn = DB, statement = query)
 }
 ```
+

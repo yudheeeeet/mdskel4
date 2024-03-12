@@ -39,9 +39,3 @@ dbWriteTable(DB,'pay_method',pm,overwrite=T,row.names=F)
 dbWriteTable(DB,'voucher',vou,overwrite=T,row.names=F)
 dbWriteTable(DB,'transaction',tran,overwrite=T,row.names=F)
 ```
-
-```{r}
-data_customer <- read.csv("data_customer.csv")
-str(data_customer)
-```
-
