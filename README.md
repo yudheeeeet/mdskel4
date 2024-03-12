@@ -16,11 +16,11 @@
 - [Screenshot](#rice_scene-screenshot)
 - [Demo](#dvd-demo)
 - [Requirements](#exclamation-requirements)
-- [Skema Database](#floppy_disk-skema-database)
+- [Database Scheme](#floppy_disk-skema-database)
 - [ERD](#rotating_light-erd)
-- [Deskripsi Data](#heavy_check_mark-deskripsi-data)
-- [Struktur Folder](#open_file_folder-struktur-folder)
-- [Tim Pengembang](#smiley_cat-tim-pengembang)
+- [Data Description](#heavy_check_mark-deskripsi-data)
+- [Folder Structure](#open_file_folder-struktur-folder)
+- [Our Team](#smiley_cat-tim-pengembang)
 
 ## :scroll: Information
 
@@ -50,7 +50,7 @@ Berikut merupakan link untuk shinnyapps atau dashboard dari project kami:
 - RDBMS yang digunakan adalah PostgreSQL dan ElephantSQL
 - Dashboard menggunakan `shinny`, `shinnythemes`, `bs4Dash`, `DT`, dan `dplyr` dari package R
 
-## :floppy_disk: Skema Database
+## :floppy_disk: Database Scheme
 
 Menggambarkan struktur *primary key* **customer**, **voucher**, **pay_method** dan **product** dengan *foreign key* **transaction** dalam membangun relasi antara tabel atau entitas.
 <p align="center">
@@ -66,7 +66,7 @@ ERD (Entity Relationship Diagram) menampilkan hubungan antara entitas dengan atr
   <img width="600" height="400" src="Image/online_shop_erd.png">
 </p>
 
-## :heavy_check_mark: Deskripsi Data
+## :heavy_check_mark: Data Description
 
 Berisi tentang tabel-tabel yang digunakan berikut dengan sintaks SQL DDL (CREATE).
 
@@ -188,7 +188,7 @@ CREATE TABLE IF NOT EXISTS public.Voucher (
 	FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
 );
 ```
-## :open_file_folder: Struktur Folder
+## :open_file_folder: Folder Structure
 
 ```
 .
@@ -211,7 +211,7 @@ CREATE TABLE IF NOT EXISTS public.Voucher (
 └── README.md
 ```
 
-## :smiley_cat: Tim Pengembang
+## :smiley_cat: Our Team
 
 
 - Backend Developer: [Rachmat Bintang Yudhianto](https://github.com/yudheeeeet) (G1501231030)
