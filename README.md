@@ -83,7 +83,7 @@ CREATE DATABASE Online_Shop
     CONNECTION LIMIT = -1
     IS_TEMPLATE = False;
 ```
-### Create Table Customer
+### :users: Create Table Customer
 Table customer memberikan informasi kepada user mengenai data customer, sehingga user dapat mengetahui id customer, gender, lokasi yang mencakup 4 lokasi yaitu california, new york, chicago, new jersey dan umur dengan rentang 17 - 63 tahun. Berikut deskripsi untuk setiap tabel customer.
 | Attribute          | Type                  | Description                     |
 |:-------------------|:----------------------|:--------------------------------|
