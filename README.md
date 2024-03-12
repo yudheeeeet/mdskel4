@@ -34,7 +34,7 @@ Project akhir mata kuliah Manajemen Data Statistika mengambil topik tentang Data
 ## :rice_scene: Screenshot
 
 <p align="center">
-  <img width="900" height="500" src="Image/pamflet.png">
+  <img width="900" height="500" src="Image/screenshoot dashboard.jpg">
 </p>
 
 ## :dvd: Demo
