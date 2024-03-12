@@ -52,7 +52,7 @@ Berikut merupakan link untuk shinnyapps atau dashboard dari project kami:
 
 Menggambarkan struktur *primary key* **customer**, **voucher**, **pay_method** dan **product** dengan *foreign key* **transaction** dalam membangun relasi antara tabel atau entitas.
 <p align="center">
-  <img width="600" height="400" src="Image/MDS_Graph-Schema.drawio.png">
+  <img width="600" height="400" src="Image/Schema.png">
 </p>
 
 
