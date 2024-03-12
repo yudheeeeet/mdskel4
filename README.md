@@ -11,8 +11,8 @@
 
 ## :bookmark_tabs: Menu
 
-- [Info](#scroll-tentang)
-- [Tentang](#blue_book-tentang)
+- [Information](#scroll-tentang)
+- [About](#blue_book-tentang)
 - [Screenshot](#rice_scene-screenshot)
 - [Demo](#dvd-demo)
 - [Requirements](#exclamation-requirements)
@@ -22,12 +22,14 @@
 - [Struktur Folder](#open_file_folder-struktur-folder)
 - [Tim Pengembang](#smiley_cat-tim-pengembang)
 
-## :scroll: Info
+## :scroll: Information
+
+Sigmaria Market is a platform that provides comprehensive information about sales transactions, available products, payment methods, vouchers, and customer data. This platform enables users to browse and acquire various products available in Sigmaria Market. With a wide range of products and recorded transaction information, Sigmaria Market presents up-to-date information about market activities that can assist users in making desired purchases. Additionally, the platform also offers recommendations for products that are suitable for customers.
 
 Sigmaria Market Online Shop adalah sebuah platform yang menyediakan informasi lengkap tentang transaksi penjualan, produk yang tersedia, metode pembayaran yang digunakan, voucher yang tersedia, dan data pelanggan. Platform ini memungkinkan pengguna untuk menjelajahi dan memperoleh berbagai produk yang tersedia di Sigmaria Market. Dengan berbagai macam produk dan informasi tentang transaksi yang tercatat, Sigmaria Market menyajikan informasi terkini mengenai aktivitas pasar yang dapat membantu pengguna dalam melakukan pembelian yang diinginkan. Selain itu, platform ini juga menyediakan rekomendasi product yang sesuai untuk customer.
 
 
-## :blue_book: Tentang
+## :blue_book: About
 
 Project akhir mata kuliah Manajemen Data Statistika mengambil topik tentang Database Sigmaria Market Online Shop. Project ini mengspesifikasikan analisis pola penjualan berbagai produk, customer, transaksi, metode pembayaran dan voucher yang disediakan dalam online shop. Kumpulan data yang digunakan dalam proyek ini bersumber dari Kaggle. Hasil yang diharapkan adalah terbentuknya sebuah platform manajemen database berupa web application yang dapat memudahkan user dalam menganalisis untuk meningkatkan dan mengoptimalkan strategi penjualan. User dapat mencari data berdasarkan kategori yang di inginkan, misalnya pencarian berbagai macam produk, voucher yang disediakan dan lain-lain.
 
