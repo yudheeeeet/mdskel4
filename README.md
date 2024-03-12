@@ -211,7 +211,21 @@ CREATE TABLE IF NOT EXISTS public.Voucher (
 
 ## :smiley_cat: Tim Pengembang
 
-- Backend Developer: [Rachmat Bintang Yudhianto](https://github.com/yudheeeeet) (G1501231030)
-- Database Manager: [Tasya Anisah Rizqi](https://github.com/tasyaanisahrizqi) (G1501231046)
 - Technical Writer: [Yunna Mentari Indah](https://github.com/yunnamentari) (G1501231017)
+<p align="center">
+  <img width="900" height="500" src="Image/YUNNA.png">
+</p>
+- Backend Developer: [Rachmat Bintang Yudhianto](https://github.com/yudheeeeet) (G1501231030)
+  <p align="center">
+  <img width="900" height="500" src="Image/YUDHIT.png">
+</p>
 - Frontend Developer: [Uswatun Hasanah](https://github.com/hhyuss) (G1501222040)
+<p align="center">
+  <img width="900" height="500" src="Image/HUS.png">
+</p>
+- Database Manager: [Tasya Anisah Rizqi](https://github.com/tasyaanisahrizqi) (G1501231046)
+<p align="center">
+  <img width="900" height="500" src="Image/TASYA.png">
+</p>
+
+
