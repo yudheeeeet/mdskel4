@@ -3,6 +3,10 @@ title: "Input Data ke SQL"
 output: html_notebook
 ---
 
+```{r}
+remove.packages("dplyr")
+install.packages("dplyr",dependencies=TRUE)
+```
 
 
 ```{r}
@@ -37,7 +41,7 @@ for (i in 1:nrow(data_customer)){
                   ","'", data_customer[i, ]$Gender, "',
                   ","'",data_customer[i, ]$Locations,"',
                   ","'",data_customer[i, ]$Age, "');")
-  query_execute <- DBI::dbGetQuery(conn = DB, statement = query)
+  DBI::dbGetQuery(conn = DB, statement = query)
 }
 ```
 
@@ -63,7 +67,7 @@ for (i in 1:nrow(data_product)){
                   ","'",data_product[i, ]$Product_Category,"',
                   ","'",data_product[i, ]$Stock,"',
                   ","'",data_product[i, ]$Price, "');")
-  query_execute <- DBI::dbGetQuery(conn = DB, statement = query)
+  DBI::dbGetQuery(conn = DB, statement = query)
 }
 ```
 
@@ -80,7 +84,7 @@ for (i in 1:nrow(data_pay_method)){
   query <- paste0("INSERT INTO pay_method (pmid, method_name) VALUES
                   (","'", data_pay_method[i, ]$PMID, "',
                   ","'", data_pay_method[i, ]$Method_name, "');")
-  query_execute <- DBI::dbGetQuery(conn = DB, statement = query)
+ DBI::dbGetQuery(conn = DB, statement = query)
 }
 ```
 
@@ -101,7 +105,7 @@ for (i in 1:nrow(data_voucher)){
                   (","'", data_voucher[i, ]$VoucherID, "',
                   ","'", data_voucher[i, ]$Voucher_name, "',
                   ","'",data_voucher[i, ]$Discount, "');")
-  query_execute <- DBI::dbGetQuery(conn = DB, statement = query)
+  DBI::dbGetQuery(conn = DB, statement = query)
 }
 ```
 ```{r}
@@ -132,7 +136,7 @@ for (i in 1:nrow(data_transaction)){
                   ","'",data_transaction[i, ]$PMID,"',
                   ","'",data_transaction[i, ]$VoucherID,"',
                   ","'",data_transaction[i, ]$Voucher_status, "');")
-  query_execute <- DBI::dbGetQuery(conn = DB, statement = query)
+  DBI::dbGetQuery(conn = DB, statement = query)
 }
 ```
 
