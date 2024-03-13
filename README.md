@@ -53,9 +53,6 @@ Berikut merupakan link untuk shinnyapps atau dashboard dari project kami:
 ## :floppy_disk: Database Scheme 
 
 Menggambarkan struktur *primary key* **customer**, **voucher**, **pay_method** dan **product** dengan *foreign key* **transaction** dalam membangun relasi antara tabel atau entitas.
-<p align="center">
-  <img width="600" height="400" src="Image/Schema.png">
-</p>
 
 <p align="center">
   <img width="600" height="400" src="Image/Rplot.png">
