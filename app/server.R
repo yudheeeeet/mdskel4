@@ -25,6 +25,8 @@ library(shiny)
 library(DBI)
 library(RPostgres)
 
+library(DBI)
+
 connectDB <- function() {
   driver <- dbDriver('PostgreSQL')
   DB <- dbConnect(
@@ -32,7 +34,7 @@ connectDB <- function() {
     dbname = "abmlblif", 
     host = "rosie.db.elephantsql.com",
     user = "abmlblif",
-    password = "eom11qi2S2qRJfGHJgHiuqRr0hOlM114-SbcpSFi"
+    password = "eom11qi2S2qRJfGHJgHiuqRr0hOlM114"
   )
 }
 
@@ -47,7 +49,7 @@ q1 <- print(
 # Query 2: Tabel Customers
 
 q2 <- print(
-  "SELECT * FROM customers"
+  "SELECT * FROM customer"
 )
 
 #--------------------------Pembentukan Dataframe-------------------------------#
@@ -63,6 +65,11 @@ dbDisconnect(DB)
 
 # Define server logic required to draw a histogram
 function(input, output, session) {
+  
+    output$tanggal <- renderText({
+      tanggal <- Sys.Date()
+      format(tanggal, "%A, %d %B %Y")
+    })
 
     output$distPlot <- renderPlot({
 
@@ -91,9 +98,9 @@ function(input, output, session) {
     
     #----------------------Tab Statistik-------------------------#
     # Render Tabel Data Leaderboard (Transaksi)
-    output$out_tbl1 <- renderTable(table01)
+    output$out_tbl1 <- renderTable(table1)
     # Render Tabel Data Leaderboard (Pelanggan)
-    output$out_tbl2 <- renderTable(table02)
+    output$out_tbl2 <- renderTable(table2)
 
     
 }
