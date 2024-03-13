@@ -83,7 +83,7 @@ CREATE DATABASE Online_Shop
     CONNECTION LIMIT = -1
     IS_TEMPLATE = False;
 ```
-### :ticket: Create Table Customer
+### :family: Create Table Customer
 Table customer memberikan informasi kepada user mengenai data customer, sehingga user dapat mengetahui id customer, gender, lokasi yang mencakup 4 lokasi yaitu california, new york, chicago, new jersey dan umur dengan rentang 17 - 63 tahun. Berikut deskripsi untuk setiap tabel customer.
 | Attribute          | Type                  | Description                     |
 |:-------------------|:----------------------|:--------------------------------|
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS public.Customer (
     PRIMARY KEY (CustomerID)
 );
 ```
-### Create Table Pay_Method
+### :credit_card: Create Table Pay_Method
 Table pay_method memberikan informasi kepada user untuk mengetahui terkait metode pembayaran yang terdiri dari 4 metode yaitu card, paypal, digital wallets dan lainnya melalui pmid dan nama metode dari masing-masing id. Berikut deskripsi untuk setiap tabel pay_method.
 | Attribute          | Type                  | Description                     |
 |:-------------------|:----------------------|:--------------------------------|
@@ -121,7 +121,7 @@ CREATE TABLE IF NOT EXISTS public.Pay_method (
 	FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
 );
 ```
-### Create Table Product
+### :womans_clothes: Create Table Product
 Table produk memberikan informasi kepada user mengenai produk pada sigmaria market. User dapat mengetahui id produk, nama produk, deskripsi produk, kategori produk, jumlah stok tiap produk, dan harga dari masing-masing produk. Berikut deskripsi untuk setiap tabel penulis.
 | Attribute                  | Type                  | Description                     		       |
 |:---------------------------|:----------------------|:------------------------------------------------|
@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS public.Product (
     PRIMARY KEY (ProductID)
 );
 ```
-### Create Table Voucher
+### :ticket: Create Table Voucher
 Table voucher menyajikan informasi lengkap mengenai sebuah voucher. Selain dapat mengetahui jumlah produk, user juga akan mendapatkan informasi mengenai voucher yang tersedia. Informasi voucher yang didapatkan berupa nama voucher dan besaran diskon dari voucher tersebut.  Berikut deskripsi dari tabel voucher.
 | Attribute                  | Type                  | Description                     		       |
 |:---------------------------|:----------------------|:------------------------------------------------|
@@ -165,7 +165,7 @@ CREATE TABLE IF NOT EXISTS public.Voucher (
 );
 
 ```
-### Create Table Transaction
+### :computer: Create Table Transaction
 Table transaction menyajikan informasi mengenai transaksi. User dapat mengetahui id transaksi, tanggal transaksi, total harga dari tiap transaksi, quantitiy, id customer, id product, pay method id, voucher id, status voucher.  Berikut deskripsi untuk setiap tabel transaction.
 | Attribute                  | Type                  | Description                     		       |
 |:---------------------------|:----------------------|:------------------------------------------------|
