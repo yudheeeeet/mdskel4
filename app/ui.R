@@ -83,11 +83,6 @@ fluidPage(
           icon = icon("ticket")
         ),
         menuItem(
-          text = "Customers",
-          tabName = "customers",
-          icon = icon("users")
-        ),
-        menuItem(
           text = "Payment Methods",
           tabName = "payment_methods",
           icon = icon("credit-card")
@@ -171,7 +166,7 @@ fluidPage(
                 inline = TRUE
               ),
               plotOutput("best_selling_products_plot", height = "150px"),
-              width = 6,
+              width = 12,
               status = "primary"
             ),
             box(
@@ -186,7 +181,7 @@ fluidPage(
                 inline = TRUE
               ),
               plotOutput("best_selling_products_gender_plot", height = "150px"),
-              width = 6,
+              width = 12,
               status = "primary"
             ),
             box(
@@ -200,7 +195,7 @@ fluidPage(
                 selected = unique(data$Age_Group)[1]
               ),
               plotOutput("best_selling_products_age_plot", height = "150px"),
-              width = 6,
+              width = 12,
               status = "primary"
             ),
             box(
@@ -215,7 +210,7 @@ fluidPage(
                 inline = TRUE
               ),
               plotOutput("best_selling_products_category_plot", height = "150px"),
-              width = 6,
+              width = 12,
               status = "primary"
             )
           )
@@ -358,7 +353,6 @@ fluidPage(
                   style = "border-radius: 10px; background-color: #FFFFFF; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);"
                 ),
               ),
-              
               style = "border-radius: 10px; background-color: #FFffff; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);"
             ), 
             
@@ -425,7 +419,6 @@ fluidPage(
                   style = "border-radius: 10px; background-color: #FFFFFF; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);"
                 ),
               ),
-              
               style = "border-radius: 10px; background-color: #FFffff; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);"
             ),
             
@@ -706,6 +699,17 @@ fluidPage(
                      class = "btn btn-block", role = "button", "BUY", style = "font-weight:bold; background-color:#4876FF; color: #FFFFFF;"),
               style = "border-radius: 10px; background-color: #FFFFFF; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);"
             )
+          ),
+          fluidRow(
+            # Display tabel 
+            box(
+              title = "GALLERY PRODUCT",
+              background = "danger",  # Mengubah warna latar belakang box
+              solidHeader = TRUE,
+              tableOutput("out_tbl2"),
+              width = 12,
+              status = "primary"
+            )
           )
         ),
         
@@ -785,10 +789,10 @@ fluidPage(
           fluidRow(
             # Display tabel 
             box(
-              title = "Table Transaction",
+              title = "Transaction",
               background = "danger",  # Mengubah warna latar belakang box
               solidHeader = TRUE,
-              dataTableOutput("out_tbl1"),
+              tableOutput("out_tbl1"),
               width = 12,
               status = "primary"
             )
@@ -813,58 +817,18 @@ fluidPage(
             )
           ),
           fluidRow(
-            # Display tabel 
+            # Display tabel
             box(
-              title = "Table Product",
+              title = "Voucher",
               background = "danger",  # Mengubah warna latar belakang box
               solidHeader = TRUE,
-              dataTableOutput("out_voucher"),
+              tableOutput("out_tbl3"),
               width = 12,
               status = "primary"
             )
           )
         ),
         
-        #-------------------------Tab Customers ------------------------#
-        tabItem(
-          tabName = "customers",
-          h2("Search Customers", align = "center", style = "color: #FF6A6A; font-size: 36px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);"), # Menambahkan judul tab
-          fluidRow(
-            # Filter product
-            box(
-              title = "Filter Customers based on Product",
-              background = "danger",  # Mengubah warna latar belakang box
-              solidHeader = TRUE,
-              tags$p("Choose the product you want to display"),
-              tags$br(),
-              uiOutput("filter_cust1"),
-              width = 12,
-              status = "primary"
-            ),
-            #filter voucher
-            box(
-              title = "Filter Customers based on Category",
-              background = "danger",
-              solidHeader = TRUE,
-              tags$p("Choose the Category you want to display"),
-              tags$br(),
-              uiOutput("filter_category"),
-              width = 12,
-              status = "primary"
-            )
-          ),
-          fluidRow(
-            # Display tabel 
-            box(
-              title = "Table Customers",
-              background = "danger",  # Mengubah warna latar belakang box
-              solidHeader = TRUE,
-              dataTableOutput("out_tbl2"),
-              width = 12,
-              status = "primary"
-            )
-          )
-        ),
         #--------------------------Tab Our Team -------------------------
         tabItem(
           tabName = "our_team",
