@@ -774,6 +774,10 @@ fluidPage(
               width = 12,
               status = "primary"
             ),
+            box(title = "filter results", status = "danger",
+                  dataTableOutput("out_tbl4"),
+                  width = 12
+                ),
             #filter voucher
             box(
               title = "Filter Transaction based on Voucher",
@@ -784,6 +788,10 @@ fluidPage(
               uiOutput("filter_voucher"),
               width = 12,
               status = "primary"
+            ),
+            box(title = "filter results", status = "danger",
+                dataTableOutput("out_tbl5"),
+                width = 12
             ),
           ),
           fluidRow(

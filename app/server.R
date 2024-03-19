@@ -14,13 +14,15 @@ library(shiny)
 library(DBI)
 library(RPostgres)
 
-DB <- dbConnect(
-  RPostgres::Postgres(),
-  dbname="fxrfzxqh",
-  host="topsy.db.elephantsql.com",
-  user="fxrfzxqh",
-  password="jRE1Mgd_PROKue2DjHJFHWTnubI4PlRD"
-)
+connectDB <- function() {
+  DB <- dbConnect(
+    RPostgres::Postgres(),
+    dbname="abmlblif",
+    host="rosie.db.elephantsql.com",
+    user="abmlblif",
+    password="eom11qi2S2qRJfGHJgHiuqRr0hOlM114"
+  )  
+}
 
 # Define server logic required to draw a histogram
 function(input, output, session) {
@@ -60,7 +62,7 @@ function(input, output, session) {
   
   output$out_tbl1 <- renderTable({
     # Lakukan query ke database
-    q1 <- "SELECT * FROM Transaction"
+    q1 <- "SELECT * FROM Transaction LIMIT 10"
     data1 <- dbGetQuery(DB, q1)
     data1
   })
@@ -81,6 +83,58 @@ function(input, output, session) {
     q3 <- "SELECT * FROM Voucher"
     data3 <- dbGetQuery(DB, q3)
     data3
+  })
+  
+  # Render Tabel Data for Transaction 
+  
+  q4 <- "SELECT t.total_price, t.quantity, t.voucher_status, p.product_name
+          FROM transaction t
+          JOIN product p ON t.productid = p.productid"
+  
+  q5 <- "SELECT t.total_price, t.quantity, t.voucher_status, v.voucher_name
+          FROM transaction t
+          JOIN voucher v ON t.voucherid = v.voucherid"
+  
+  DB <- connectDB()
+  table04 <- data.frame(dbGetQuery(DB, q4))
+  table05 <- data.frame(dbGetQuery(DB, q5))
+  
+  # Output Setting for UI Transaction Product Menu
+  
+  output$filter_transaction <- renderUI({
+    selectInput(
+      inputId = "nama_product_filter",
+      label = "Pilih Nama Produk",
+      multiple = FALSE,
+      choices = table04$product_name
+    )
+  })
+  
+  data4 <- reactive({
+    table04 %>% filter(product_name %in% input$nama_product_filter)
+  })
+  
+  output$out_tbl4 <- renderDataTable({
+    data4()
+  })
+  
+  # Output Setting for UI Transaction Voucher Menu
+  
+  output$filter_voucher <- renderUI({
+    selectInput(
+      inputId = "nama_voucher_filter",
+      label = "Pilih Nama Voucher",
+      multiple = FALSE,
+      choices = table05$voucher_name
+    )
+  })
+  
+  data5 <- reactive({
+    table05 %>% filter(voucher_name %in% input$nama_voucher_filter)
+  })
+  
+  output$out_tbl5 <- renderDataTable({
+    data5()
   })
   
 }
