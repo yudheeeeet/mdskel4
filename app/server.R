@@ -60,16 +60,23 @@ function(input, output, session) {
   #----------------------Tab Statistik-------------------------#
   # Render Tabel Data Leaderboard (Transaksi)
   
-  output$out_tbl1 <- renderTable({
+  output$out_tbl1 <- renderDataTable({
     # Lakukan query ke database
-    q1 <- "SELECT * FROM Transaction LIMIT 10"
+    q1 <- "SELECT t.transactionid, c.gender, c.locations, p.product_name, pm.method_name, v.voucher_name 
+          FROM transaction t
+          JOIN voucher v ON t.voucherid = v.voucherid
+          JOIN product p ON t.productid = p.productid
+          JOIN customer c ON t.customerid = c.customerid
+          JOIN pay_method pm ON t.pmid = pm.pmid
+          ;
+"
     data1 <- dbGetQuery(DB, q1)
     data1
   })
   
   # Render Tabel Data Leaderboard (Product)
   
-  output$out_tbl2 <- renderTable({
+  output$out_tbl2 <- renderDataTable({
     # Lakukan query ke database
     q2 <- "SELECT * FROM Product"
     data2 <- dbGetQuery(DB, q2)
@@ -78,7 +85,7 @@ function(input, output, session) {
   
   # Render Tabel Data Leaderboard (Voucher)
   
-  output$out_tbl3 <- renderTable({
+  output$out_tbl3 <- renderDataTable({
     # Lakukan query ke database
     q3 <- "SELECT * FROM Voucher"
     data3 <- dbGetQuery(DB, q3)
@@ -95,9 +102,15 @@ function(input, output, session) {
           FROM transaction t
           JOIN voucher v ON t.voucherid = v.voucherid"
   
+  q6 <- "SELECT t.total_price, t.quantity, v.voucher_name, p.product_name
+          FROM transaction t
+          JOIN voucher v ON t.voucherid = v.voucherid
+          JOIN product p ON t.productid = p.productid"
+  
   DB <- connectDB()
   table04 <- data.frame(dbGetQuery(DB, q4))
   table05 <- data.frame(dbGetQuery(DB, q5))
+  table06 <- data.frame(dbGetQuery(DB, q6))
   
   # Output Setting for UI Transaction Product Menu
   
@@ -135,6 +148,25 @@ function(input, output, session) {
   
   output$out_tbl5 <- renderDataTable({
     data5()
+  })
+  
+  # Output Setting for UI Voucher Apply Menu
+  
+  output$filter_voucher1 <- renderUI({
+    selectInput(
+      inputId = "product_voucher_filter",
+      label = "Pilih Nama Voucher",
+      multiple = FALSE,
+      choices = table06$voucher_name
+    )
+  })
+  
+  data6 <- reactive({
+    table06 %>% filter(voucher_name %in% input$product_voucher_filter)
+  })
+  
+  output$out_tbl6 <- renderDataTable({
+    data6()
   })
   
 }
