@@ -704,9 +704,9 @@ fluidPage(
             # Display tabel 
             box(
               title = "GALLERY PRODUCT",
-              background = "danger",  # Mengubah warna latar belakang box
+              background = "white",  # Mengubah warna latar belakang box
               solidHeader = TRUE,
-              tableOutput("out_tbl2"),
+              dataTableOutput("out_tbl2"),
               width = 12,
               status = "primary"
             )
@@ -798,9 +798,9 @@ fluidPage(
             # Display tabel 
             box(
               title = "Transaction",
-              background = "danger",  # Mengubah warna latar belakang box
+              background = "white",  # Mengubah warna latar belakang box
               solidHeader = TRUE,
-              tableOutput("out_tbl1"),
+              dataTableOutput("out_tbl1"),
               width = 12,
               status = "primary"
             )
@@ -822,16 +822,21 @@ fluidPage(
               uiOutput("filter_voucher1"),
               width = 12,
               status = "primary"
-            )
+            ),
+            box(
+              title = "filter results", status = "danger",
+              dataTableOutput("out_tbl6"),
+              width = 12
+            ),
           ),
           fluidRow(
             # Display tabel
             box(
               title = "Voucher",
-              background = "danger",  # Mengubah warna latar belakang box
+              background = "white",  # Mengubah warna latar belakang box
               solidHeader = TRUE,
-              tableOutput("out_tbl3"),
-              width = 12,
+              dataTableOutput("out_tbl3"),
+              width = 7,
               status = "primary"
             )
           )
