@@ -248,7 +248,7 @@ CREATE TABLE IF NOT EXISTS public.Voucher (
   <img width="900" height="500" src="Image/TASYA.png">
 </p>
 
-- Frontend Developer: [Uswatun Hasanah](https://github.com/hhyuss) (G1501222040)
+- Frontend Developer: [Uswatun Hasanah](https://github.com/hhyuss) (G1501231040)
 <p align="center">
   <img width="900" height="500" src="Image/HUS.png">
 </p>
