@@ -229,9 +229,9 @@ CREATE TABLE IF NOT EXISTS public.Voucher (
 │   └── sql
 |       └── db.sql
 ├── doc           # Doc for the project
-├── src           # Project source code
+├── .DS_Store           
 ├── .gitignore
-├── LICENSE
+├── ProjectMDS.Rproj
 └── README.md
 ```
 
