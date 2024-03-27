@@ -154,62 +154,28 @@ fluidPage(
                  p(HTML("Discover our selection of best-selling products and find your new favorites. &#127775;"))
           ),
           fluidRow(
+            # Display tabel 
             box(
               title = "Best-Selling Products by Location",
-              background = "danger",  # Mengubah warna latar belakang box
+              background = "white",  # Mengubah warna latar belakang box
               solidHeader = TRUE,
-              radioButtons(
-                inputId = "location_filter",
-                label = "Location:",
-                choices = unique(data$Locations),
-                selected = unique(data$Locations)[1],
-                inline = TRUE
-              ),
-              plotOutput("best_selling_products_plot", height = "150px"),
+              dataTableOutput("out_tbl8"),
               width = 12,
               status = "primary"
             ),
             box(
               title = "Best-Selling Products by Gender",
-              background = "danger",  # Mengubah warna latar belakang box
+              background = "white",  # Mengubah warna latar belakang box
               solidHeader = TRUE,
-              radioButtons(
-                inputId = "gender_filter",
-                label = "Gender:",
-                choices = unique(data$Gender),
-                selected = unique(data$Gender)[1],
-                inline = TRUE
-              ),
-              plotOutput("best_selling_products_gender_plot", height = "150px"),
-              width = 12,
-              status = "primary"
-            ),
-            box(
-              title = "Best-Selling Products by Age Group",
-              background = "danger",  # Mengubah warna latar belakang box
-              solidHeader = TRUE,
-              radioButtons(
-                inputId = "age_group_filter",
-                label = "Age Group:",
-                choices = unique(data$Age_Group),
-                selected = unique(data$Age_Group)[1]
-              ),
-              plotOutput("best_selling_products_age_plot", height = "150px"),
+              dataTableOutput("out_tbl9"),
               width = 12,
               status = "primary"
             ),
             box(
               title = "Best-Selling Products by Category",
-              background = "danger",  # Mengubah warna latar belakang box
+              background = "white",  # Mengubah warna latar belakang box
               solidHeader = TRUE,
-              radioButtons(
-                inputId = "category_filter",
-                label = "Product Category:",
-                choices = unique(data$Product_Category),
-                selected = unique(data$Product_Category)[1],
-                inline = TRUE
-              ),
-              plotOutput("best_selling_products_category_plot", height = "150px"),
+              dataTableOutput("out_tbl10"),
               width = 12,
               status = "primary"
             )
