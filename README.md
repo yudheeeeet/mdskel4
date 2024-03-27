@@ -24,10 +24,11 @@
 
 ## :pushpin: Information
 
+## What is Sigmaria?
 Sigmaria Market is a platform that provides comprehensive information about sales transactions, available products, payment methods, vouchers, and customer data. This platform enables users to browse and acquire various products available in Sigmaria Market. With a wide range of products and recorded transaction information, Sigmaria Market presents up-to-date information about market activities that can assist users in making desired purchases. Additionally, the platform also offers recommendations for products that are suitable for customers.
 
-Sigmaria Market Online Shop adalah sebuah platform yang menyediakan informasi lengkap tentang transaksi penjualan, produk yang tersedia, metode pembayaran yang digunakan, voucher yang tersedia, dan data pelanggan. Platform ini memungkinkan pengguna untuk menjelajahi dan memperoleh berbagai produk yang tersedia di Sigmaria Market. Dengan berbagai macam produk dan informasi tentang transaksi yang tercatat, Sigmaria Market menyajikan informasi terkini mengenai aktivitas pasar yang dapat membantu pengguna dalam melakukan pembelian yang diinginkan. Selain itu, platform ini juga menyediakan rekomendasi product yang sesuai untuk customer.
-
+## How to use this Platform?
+Navigate through the menu at the top of the page to explore the available products and vouchers. Choose your desired category or use the search feature to find specific items. Sigmaria Market will then display detailed information about the products, including vouchers and available payment methods. Simply add your chosen items to the cart and proceed to checkout. Enjoy the convenience of shopping with Sigmaria!
 
 ## :clipboard: About
 
@@ -36,32 +37,29 @@ Project akhir mata kuliah Manajemen Data Statistika mengambil topik tentang Data
 ## :rice_scene: Screenshot
 - Home
 <p align="center">
-  <img width="900" height="500" src="Image/screenshoot dashboard.jpg">
+  <img width="900" height="500" src="Image/Screenshot Home.png">
 </p>
 
 - Product
   <p align="center">
-  <img width="900" height="500" src="Image/Screenshot (337).png">
-</p>
-
-<p align="center">
-  <img width="900" height="500" src="Image/Screenshot (338).png">
-</p>
-
-<p align="center">
-  <img width="900" height="500" src="Image/Screenshot (339).png">
+  <img width="900" height="500" src="Image/Screenshot Gallery Product.png">
 </p>
 
 - Transactions
-
 <p align="center">
-  <img width="900" height="500" src="Image/Screenshot (340).png">
+  <img width="900" height="500" src="Image/Screenshot Transaction.png">
 </p>
 
+- Voucher
+<p align="center">
+  <img width="900" height="500" src="Image/Screenshot Voucher.png">
+</p>
+  
 - Payment Methods
 <p align="center">
-  <img width="900" height="500" src="Image/Screenshot (341).png">
+  <img width="900" height="500" src="Image/Screenshot Payment.png">
 </p>
+
 
 ## :dvd: Demo
 
