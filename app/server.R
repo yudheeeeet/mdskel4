@@ -107,10 +107,113 @@ function(input, output, session) {
           JOIN voucher v ON t.voucherid = v.voucherid
           JOIN product p ON t.productid = p.productid"
   
+  q7 <- "SELECT t.transactionid, c.locations, p.product_name, sales_counts.total_sales
+          FROM transaction t
+          JOIN product p ON t.productid = p.productid
+          JOIN customer c ON t.customerid = c.customerid
+          JOIN (SELECT c.locations, p.product_name, 
+          COUNT(*) AS total_sales FROM transaction t
+          JOIN customer c ON t.customerid = c.customerid
+          JOIN product p ON t.productid = p.productid
+          GROUP BY c.locations, p.product_name) 
+          AS sales_counts ON c.locations = sales_counts.locations
+          AND p.product_name = sales_counts.product_name"
+  
+  output$out_tbl8 <- renderDataTable({
+    q8 <- "WITH product_sales_rank AS (
+    SELECT 
+        t.transactionid,
+        c.locations,
+        p.product_name,
+        sales_counts.total_sales,
+        ROW_NUMBER() OVER (PARTITION BY c.locations ORDER BY sales_counts.total_sales DESC) AS sales_rank
+    FROM 
+        transaction t
+    JOIN 
+        product p ON t.productid = p.productid
+    JOIN 
+        customer c ON t.customerid = c.customerid
+    JOIN 
+        (SELECT 
+             c.locations,
+             p.product_name,
+             COUNT(*) AS total_sales
+         FROM 
+             transaction t
+         JOIN 
+             customer c ON t.customerid = c.customerid
+         JOIN 
+             product p ON t.productid = p.productid
+         GROUP BY 
+             c.locations,
+             p.product_name) AS sales_counts ON c.locations = sales_counts.locations
+                                            AND p.product_name = sales_counts.product_name
+)
+SELECT 
+    transactionid,
+    locations,
+    product_name,
+    total_sales,
+    sales_rank
+FROM 
+    product_sales_rank;
+"
+    data8 <- dbGetQuery(DB, q8)
+    data8
+  })
+  
+  output$out_tbl9 <- renderDataTable({
+    q9 <- "SELECT 
+    product_name,
+    gender,
+    total_sales,
+    RANK() OVER(PARTITION BY gender ORDER BY total_sales DESC) AS sales_rank
+FROM (
+    SELECT 
+        p.product_name, 
+        c.gender, 
+        COUNT(*) as total_sales
+    FROM 
+        transaction t
+    JOIN 
+        product p ON t.productid = p.productid
+    JOIN 
+        customer c ON t.customerid = c.customerid
+    GROUP BY 
+        p.product_name, c.gender
+) AS sales_summary
+ORDER BY 
+    gender ASC, sales_rank ASC;
+"
+    data9 <- dbGetQuery(DB, q9)
+    data9
+  })
+  
+  output$out_tbl10 <- renderDataTable({
+    q10 <- "SELECT 
+    p.product_category,
+    p.product_name,
+    COUNT(*) AS total_sales
+FROM 
+    transaction t
+JOIN 
+    product p ON t.productid = p.productid
+JOIN 
+    customer c ON t.customerid = c.customerid
+GROUP BY 
+    p.product_category, p.product_name
+ORDER BY 
+    p.product_category, total_sales DESC;
+"
+    data10 <- dbGetQuery(DB, q10)
+    data10
+  })
+
   DB <- connectDB()
   table04 <- data.frame(dbGetQuery(DB, q4))
   table05 <- data.frame(dbGetQuery(DB, q5))
   table06 <- data.frame(dbGetQuery(DB, q6))
+  table07 <- data.frame(dbGetQuery(DB, q7))
   
   # Output Setting for UI Transaction Product Menu
   
@@ -169,4 +272,22 @@ function(input, output, session) {
     data6()
   })
   
+  # Output Setting for Best Selling Products
+  
+  output$filter_location <- renderUI({
+    selectInput(
+      inputId = "product_locations_filter",
+      label = "Pilih Lokasi",
+      multiple = FALSE,
+      choices = table07$locations
+    )
+  })
+  
+  data7 <- reactive({
+    table07 %>% filter(locations %in% input$product_location_filter)
+  })
+  
+  output$out_tbl7 <- renderDataTable({
+    data7()
+  })
 }
