@@ -65,7 +65,7 @@ Project akhir mata kuliah Manajemen Data Statistika mengambil topik tentang Data
 
 ## :dvd: Demo
 
-Berikut merupakan link untuk shinnyapps atau dashboard dari project kami:
+Berikut merupakan link untuk shinnyapps atau dashboard dari project kami: https://yudheeet1991.shinyapps.io/mdskel4app/#
 
 
 ## :exclamation: Requirements
