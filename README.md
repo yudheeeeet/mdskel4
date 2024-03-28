@@ -24,7 +24,6 @@
 
 ## :pushpin: Information
 HELLO... THE LOVELY OUR USERS!! :heartpulse:
-
 WELCOME TO THE SIGMARIA MARKET! :wave:
 
 Here's a information about sigmaria :
