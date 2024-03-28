@@ -23,7 +23,7 @@
 - [Our Team](#heavy_heart_exclamation-Our-Team)
 
 ## :pushpin: Information
-:heartpulse: HELLO... OUR LOVELY USERS!! 
+:heartpulse: HELLO... OUR LOVELY USERS!! </strong></summary>
 WELCOME TO THE SIGMARIA MARKET! :wave:
 
 **Here's a information about Sigmaria :**
@@ -39,7 +39,7 @@ Navigate through the menu at the top of the page to explore the available produc
 The final project of the Statistical Data Management course takes the topic of the Sigmaria Market Online Shop Database. The specifies project analysis of sales patterns of various products, transactions, vouchers and payment methods provided by the online shop. The dataset used in this project was sourced from Kaggle. The expected result is a database management platform in the form of a web application that can make it easier for users to improve and optimize analysis sales strategies. Users can search for data based on the desired category, e.g searching of various products, vouchers etc.
 
 ## :camera: Screenshot
-**- Home**
+- Home
 <p align="center">
   <img width="900" height="500" src="Image/Screenshot Home.png">
 </p>
@@ -148,6 +148,7 @@ The transaction table presents information of transactions. Users can find out t
 | voucher_status             | text		     | Status Voucher                   	       |
 
 with the SQL script :
+
 ```sql
 CREATE TABLE IF NOT EXISTS public.Transaction (
     TransactionID character varying(20) NOT NULL,
