@@ -13,14 +13,14 @@
 
 - [Information](#pushpin-Information)
 - [About](#clipboard-About)
-- [Screenshot](#camera-screenshot)
-- [Demo](#card_file_box-demo)
-- [Requirements](#exclamation-requirements)
-- [Database Scheme](#floppy_disk-database-scheme)
-- [ERD](#rotating_light-erd)
-- [Data Description](#heavy_check_mark-data-description)
-- [Folder Structure](#open_file_folder-folder-structure)
-- [Our Team](#heavy_heart_exclamation-our-team)
+- [Screenshot](#camera-Screenshot)
+- [Demo](#card_file_box-Demo)
+- [Requirements](#exclamation-Requirements)
+- [Database Scheme](#floppy_disk-Database-Scheme)
+- [ERD](#rotating_light-ERD)
+- [Data Description](#heavy_check_mark-Data-Description)
+- [Folder Structure](#open_file_folder-Folder-Structure)
+- [Our Team](#heavy_heart_exclamation-Our-Team)
 
 ## :pushpin: Information
 :heartpulse: HELLO... OUR LOVELY USERS!! 
