@@ -23,7 +23,7 @@
 - [Our Team](#heavy_heart_exclamation-our-team)
 
 ## :pushpin: Information
-:heartpulse: HELLO... THE LOVELY OUR USERS!! 
+:heartpulse: HELLO... OUR LOVELY USERS!! 
 WELCOME TO THE SIGMARIA MARKET! :wave:
 
 Here's a information about sigmaria :
@@ -108,7 +108,7 @@ CREATE DATABASE Online_Shop
     IS_TEMPLATE = False;
 ```
 ### :womans_clothes: Create Table Product
-The product table provides information to users about products of the sigmaria market. Users can find out the product ID, product name, product description, product category, stock amount, and price of each product. Below is a description for each author's table.
+The product table provides information to users about products of the sigmaria market. Users can find out the product ID, product name, product description, product category, stock amount, and price of each product. Here is a description for each author's table.
 
 | Attribute                  | Type                  | Description                     		       |
 |:---------------------------|:----------------------|:------------------------------------------------|
@@ -149,18 +149,25 @@ The transaction table presents information of transactions. Users can find out t
 
 with the SQL script :
 ```sql
-CREATE TABLE IF NOT EXISTS public.Voucher (
-    VoucherID character varying(11) NOT NULL,
-    Voucher_name text NOT NULL,
-    Voucher_status text NOT NULL,
-	Discount integer NOT NULL,
+CREATE TABLE IF NOT EXISTS public.Transaction (
+    TransactionID character varying(20) NOT NULL,
+    Transaction_Date date NOT NULL,
+    Total_price numeric NOT NULL,
+	Quantity integer NOT NULL,
 	CustomerID character varying(11) NOT NULL,
-	PRIMARY KEY (VoucherID),
-	FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
+	ProductID character varying(20) NOT NULL,
+	PMID character varying(11) NOT NULL,
+	VoucherID character varying(11) NOT NULL,
+	Voucher_status text NOT NULL,
+	PRIMARY KEY (TransactionID),
+	FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID),
+	FOREIGN KEY (ProductID) REFERENCES Product (ProductID),
+	FOREIGN KEY (PMID) REFERENCES Pay_method (PMID),
+	FOREIGN KEY (VoucherID) REFERENCES Voucher (VoucherID)
 );
 ```
 ### :ticket: Create Table Voucher
-The voucher table presents information about a voucher. Besides being able to know the number of products, users will also get information about available vouchers. Users will get the voucher information about the name of the voucher and the amount of the discount on the voucher. Here is a description of the voucher table.
+The voucher table presents information about a voucher. Besides being able to know the number of products, users will also get information about available vouchers. Users will get the voucher information about the name of the voucher and the amount of the discount on the voucher. Below is a description of the voucher table.
 
 | Attribute                  | Type                  | Description                     		       |
 |:---------------------------|:----------------------|:------------------------------------------------|
@@ -174,11 +181,8 @@ with the SQL script :
 CREATE TABLE IF NOT EXISTS public.Voucher (
     VoucherID character varying(11) NOT NULL,
     Voucher_name text NOT NULL,
-    Voucher_status text NOT NULL,
 	Discount integer NOT NULL,
-	CustomerID character varying(11) NOT NULL,
-	PRIMARY KEY (VoucherID),
-	FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
+	PRIMARY KEY (VoucherID)
 );
 ```
 ### :credit_card: Create Table Pay_Method
@@ -195,11 +199,7 @@ with the SQL script :
 CREATE TABLE IF NOT EXISTS public.Pay_method (
     PMID character varying(11) NOT NULL,
     Method_name text NOT NULL,
-    Voucher_status text NOT NULL,
-	Discount integer NOT NULL,
-	CustomerID character varying(11) NOT NULL,
-	PRIMARY KEY (PMID),
-	FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
+	PRIMARY KEY (PMID)
 );
 ```
 ### :couple: Create Table Customer
