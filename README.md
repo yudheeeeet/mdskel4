@@ -232,15 +232,16 @@ CREATE TABLE IF NOT EXISTS public.Customer (
 ├── app           # ShinyApps
 │   ├── css
 │   │   ├── **/*.css
-│   ├── server.R
+│   ├── .DS_Store
+|   ├── server.R
 │   └── ui.R
-├── con
 ├── data 
 │   ├── csv
 │   │   ├── **/*.css
 │   └── sql
 |       └── db.sql
 ├── doc           # Doc for the project
+├── src		  ## Project source code
 ├── .DS_Store           
 ├── .gitignore
 ├── ProjectMDS.Rproj
