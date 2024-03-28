@@ -63,7 +63,7 @@ The final project of the Statistical Data Management course takes the topic of t
 
 ## :dvd: Demo
 
-The link of our project shinnyapps or dashboard : https://yudheeet1991.shinyapps.io/mdskel4app/#
+The link of our shinnyapps or dashboard project : https://yudheeet1991.shinyapps.io/mdskel4app/#
 
 
 ## :exclamation: Requirements
@@ -113,7 +113,7 @@ The customer table provides information to the user regarding customer data, so 
 | locations          | text		     | Lokasi                          |
 | age		     | integer	 	     | Umur	                       |
 
-## the SQL script : 
+with the SQL script : 
 
 ```sql
 CREATE TABLE IF NOT EXISTS public.Customer (
@@ -125,14 +125,15 @@ CREATE TABLE IF NOT EXISTS public.Customer (
 );
 ```
 ### :credit_card: Create Table Pay_Method
-The pay_method table provides information for users to find out about payment methods which consist of 4 methods, namely card, PayPal, digital wallets and others via PMID and the method name of each ID. Here's a description for each pay_method table.
+The pay_method table provides information to the users about payment methods which consist of 4 methods, there are card, PayPal, digital wallets and others from PMID and the method name of each ID. Here's a description for each pay_method table.
 
 | Attribute          | Type                  | Description                     |
 |:-------------------|:----------------------|:--------------------------------|
 | pmid               | character varying(11) | Id pay method                   |
 | method_name        | text		     | nama metode pembayaran	       |
 
-dengan script SQL sebagai berikut:
+with the SQL script :
+
 ```sql
 CREATE TABLE IF NOT EXISTS public.Pay_method (
     PMID character varying(11) NOT NULL,
@@ -145,7 +146,8 @@ CREATE TABLE IF NOT EXISTS public.Pay_method (
 );
 ```
 ### :womans_clothes: Create Table Product
-Table produk memberikan informasi kepada user mengenai produk pada sigmaria market. User dapat mengetahui id produk, nama produk, deskripsi produk, kategori produk, jumlah stok tiap produk, dan harga dari masing-masing produk. Berikut deskripsi untuk setiap tabel penulis.
+The product table provides information to users about products of the sigmaria market. Users can find out the product ID, product name, product description, product category, stock amount, and price of each product. Below is a description for each author's table.
+
 | Attribute                  | Type                  | Description                     		       |
 |:---------------------------|:----------------------|:------------------------------------------------|
 | productid                  | character varying(20) | Id Produk                       		       |
@@ -155,7 +157,8 @@ Table produk memberikan informasi kepada user mengenai produk pada sigmaria mark
 | stock	                     | integer		     | Jumlah Stok dari Setiap Produk	               |
 | price		    	     | numeric               | Harga dari Masing-Masing Produk                 |
 
-dengan script SQL sebagai berikut:
+with the SQL script :
+
 ```sql
 CREATE TABLE IF NOT EXISTS public.Product (
     ProductID character varying(20) NOT NULL,
@@ -168,14 +171,16 @@ CREATE TABLE IF NOT EXISTS public.Product (
 );
 ```
 ### :ticket: Create Table Voucher
-Table voucher menyajikan informasi lengkap mengenai sebuah voucher. Selain dapat mengetahui jumlah produk, user juga akan mendapatkan informasi mengenai voucher yang tersedia. Informasi voucher yang didapatkan berupa nama voucher dan besaran diskon dari voucher tersebut.  Berikut deskripsi dari tabel voucher.
+The voucher table presents information about a voucher. Besides being able to know the number of products, users will also get information about available vouchers. Users will get the voucher information about the name of the voucher and the amount of the discount on the voucher. Here is a description of the voucher table.
+
 | Attribute                  | Type                  | Description                     		       |
 |:---------------------------|:----------------------|:------------------------------------------------|
 | voucherid                  | character varying(11) | Id Voucher                       	       |
 | voucher_name               | text		     | Nama Voucher                  		       |
 | discount                   | integer		     | Besaran Diskon dari Setiap Voucher              |	
 
-dengan script SQL sebagai berikut:              
+with the SQL script :
+
 ```sql
 CREATE TABLE IF NOT EXISTS public.Voucher (
     VoucherID character varying(11) NOT NULL,
@@ -189,7 +194,8 @@ CREATE TABLE IF NOT EXISTS public.Voucher (
 
 ```
 ### :computer: Create Table Transaction
-Table transaction menyajikan informasi mengenai transaksi. User dapat mengetahui id transaksi, tanggal transaksi, total harga dari tiap transaksi, quantitiy, id customer, id product, pay method id, voucher id, status voucher.  Berikut deskripsi untuk setiap tabel transaction.
+The transaction table presents information of transactions. Users can find out transaction ID, transaction date, total price of each transaction, quantity, customer ID, product ID, pay method ID, voucher ID, voucher status. The following is a description for each transaction table.
+
 | Attribute                  | Type                  | Description                     		       |
 |:---------------------------|:----------------------|:------------------------------------------------|
 | transactionid              | character varying(20) | Id Transaksi                       	       |
@@ -202,7 +208,7 @@ Table transaction menyajikan informasi mengenai transaksi. User dapat mengetahui
 | voucherid		     | character varying(11) | Id Voucher				       |
 | voucher_status             | text		     | Status Voucher                   	       |
 
-dengan script SQL sebagai berikut:
+with the SQL script :
 ```sql
 CREATE TABLE IF NOT EXISTS public.Voucher (
     VoucherID character varying(11) NOT NULL,
