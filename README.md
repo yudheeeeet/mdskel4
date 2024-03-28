@@ -90,10 +90,11 @@ ERD (Entity Relationship Diagram) describes the relationship between entities an
 
 ## :heavy_check_mark: Data Description
 
-Berisi tentang tabel-tabel yang digunakan berikut dengan sintaks SQL DDL (CREATE).
+Contains the tables and SQL DDL (CREATE) syntax.
 
 ### :floppy_disk: Create Database
-Database Sigmaria Market Online Shop menyimpan informasi yang mewakili atribut data yang saling berhubungan untuk kemudian dianalisis.
+The Sigmaria Market Online Shop database stores information that represents interconnected data attributes for the analysis.
+
 ```sql
 CREATE DATABASE Online_Shop
     WITH
@@ -103,7 +104,8 @@ CREATE DATABASE Online_Shop
     IS_TEMPLATE = False;
 ```
 ### :couple: Create Table Customer
-Table customer memberikan informasi kepada user mengenai data customer, sehingga user dapat mengetahui id customer, gender, lokasi yang mencakup 4 lokasi yaitu california, new york, chicago, new jersey dan umur dengan rentang 17 - 63 tahun. Berikut deskripsi untuk setiap tabel customer.
+The customer table provides information to the user regarding customer data, so that the user can find out the customer ID, gender, location which includes 4 locations, there are California, New York, Chicago, New Jersey and age range 17 - 63 years. Here is a description for each customer table. 
+
 | Attribute          | Type                  | Description                     |
 |:-------------------|:----------------------|:--------------------------------|
 | customerid         | character varying(11) | Id Customer                     |
@@ -111,7 +113,8 @@ Table customer memberikan informasi kepada user mengenai data customer, sehingga
 | locations          | text		     | Lokasi                          |
 | age		     | integer	 	     | Umur	                       |
 
-dengan script SQL sebagai berikut:
+## the SQL script : 
+
 ```sql
 CREATE TABLE IF NOT EXISTS public.Customer (
     CustomerID character varying(11) NOT NULL,
@@ -122,7 +125,8 @@ CREATE TABLE IF NOT EXISTS public.Customer (
 );
 ```
 ### :credit_card: Create Table Pay_Method
-Table pay_method memberikan informasi kepada user untuk mengetahui terkait metode pembayaran yang terdiri dari 4 metode yaitu card, paypal, digital wallets dan lainnya melalui pmid dan nama metode dari masing-masing id. Berikut deskripsi untuk setiap tabel pay_method.
+The pay_method table provides information for users to find out about payment methods which consist of 4 methods, namely card, PayPal, digital wallets and others via PMID and the method name of each ID. Here's a description for each pay_method table.
+
 | Attribute          | Type                  | Description                     |
 |:-------------------|:----------------------|:--------------------------------|
 | pmid               | character varying(11) | Id pay method                   |
