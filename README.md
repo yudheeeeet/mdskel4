@@ -23,7 +23,7 @@
 - [Our Team](#heavy_heart_exclamation-Our-Team)
 
 ## :pushpin: Information
-:heartpulse: HELLO... OUR LOVELY USERS!! </strong></summary>
+:heartpulse: HELLO... OUR LOVELY USERS!!
 WELCOME TO THE SIGMARIA MARKET! :wave:
 
 **Here's a information about Sigmaria :**
