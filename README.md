@@ -11,22 +11,22 @@
 
 ## :bookmark_tabs: Menu
 
-- [Information](#pushpin-tentang)
-- [About](#clipboard-tentang)
+- [Information](#pushpin-information)
+- [About](#clipboard-about)
 - [Screenshot](#camera-screenshot)
 - [Demo](#card_file_box-demo)
 - [Requirements](#exclamation-requirements)
-- [Database Scheme](#floppy_disk-skema-database)
+- [Database Scheme](#floppy_disk-database-scheme)
 - [ERD](#rotating_light-erd)
-- [Data Description](#heavy_check_mark-deskripsi-data)
-- [Folder Structure](#open_file_folder-struktur-folder)
+- [Data Description](#heavy_check_mark-data-description)
+- [Folder Structure](#open_file_folder-folder-structure)
 - [Our Team](#heavy_heart_exclamation-our-team)
 
 ## :pushpin: Information
 :heartpulse: HELLO... OUR LOVELY USERS!! 
 WELCOME TO THE SIGMARIA MARKET! :wave:
 
-Here's a information about sigmaria :
+Here's a information about Sigmaria :
 
 ## What is Sigmaria?
 Sigmaria Market is a platform that provides comprehensive information about sales transactions, available products, payment methods, vouchers, and customer data. This platform enables users to browse and acquire various products available in Sigmaria Market. With a wide range of products and recorded transaction information, Sigmaria Market presents up-to-date information about market activities that can assist users in making desired purchases. Additionally, the platform also offers recommendations for products that are suitable for customers.
@@ -81,7 +81,7 @@ The link of our shinnyapps or dashboard project : https://yudheeet1991.shinyapps
 Structure description of *primary key* **customer**, **voucher**, **pay_method** and **product** also *foreign key* **transaction** in establishing relationships between tables or entities.
 
 <p align="center">
-  <img width="600" height="400" src="Image/Rplot.png">
+  <img width="600" height="400" src="Image/skema.png">
 </p>
 
 ## :rotating_light: ERD
