@@ -11,8 +11,8 @@
 
 ## :bookmark_tabs: Menu
 
-- [Information](#pushpin-information)
-- [About](#clipboard-about)
+- [Information](#pushpin-Information)
+- [About](#clipboard-About)
 - [Screenshot](#camera-screenshot)
 - [Demo](#card_file_box-demo)
 - [Requirements](#exclamation-requirements)
