@@ -96,7 +96,7 @@ ERD (Entity Relationship Diagram) describes the relationship between entities an
 
 Contains the tables and SQL DDL (CREATE) syntax.
 
-### :floppy_disk: Create Database
+### :abacus: Create Database
 The Sigmaria Market Online Shop database stores information that represents interconnected data attributes for the analysis.
 
 ```sql
