@@ -103,48 +103,6 @@ CREATE DATABASE Online_Shop
     CONNECTION LIMIT = -1
     IS_TEMPLATE = False;
 ```
-### :couple: Create Table Customer
-The customer table provides information to the user regarding customer data, so that the user can find out the customer ID, gender, location which includes 4 locations, there are California, New York, Chicago, New Jersey and age range 17 - 63 years. Here is a description for each customer table. 
-
-| Attribute          | Type                  | Description                     |
-|:-------------------|:----------------------|:--------------------------------|
-| customerid         | character varying(11) | Id Customer                     |
-| gender             | character varying(11) | Jenis Kelamin                   |
-| locations          | text		     | Lokasi                          |
-| age		     | integer	 	     | Umur	                       |
-
-with the SQL script : 
-
-```sql
-CREATE TABLE IF NOT EXISTS public.Customer (
-    CustomerID character varying(11) NOT NULL,
-    Gender character varying(11) NOT NULL,
-    Locations text NOT NULL,
-	Age integer NOT NULL,
-    PRIMARY KEY (CustomerID)
-);
-```
-### :credit_card: Create Table Pay_Method
-The pay_method table provides information to the users about payment methods which consist of 4 methods, there are card, PayPal, digital wallets and others from PMID and the method name of each ID. Here's a description for each pay_method table.
-
-| Attribute          | Type                  | Description                     |
-|:-------------------|:----------------------|:--------------------------------|
-| pmid               | character varying(11) | Id pay method                   |
-| method_name        | text		     | nama metode pembayaran	       |
-
-with the SQL script :
-
-```sql
-CREATE TABLE IF NOT EXISTS public.Pay_method (
-    PMID character varying(11) NOT NULL,
-    Method_name text NOT NULL,
-    Voucher_status text NOT NULL,
-	Discount integer NOT NULL,
-	CustomerID character varying(11) NOT NULL,
-	PRIMARY KEY (PMID),
-	FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
-);
-```
 ### :womans_clothes: Create Table Product
 The product table provides information to users about products of the sigmaria market. Users can find out the product ID, product name, product description, product category, stock amount, and price of each product. Below is a description for each author's table.
 
@@ -169,29 +127,6 @@ CREATE TABLE IF NOT EXISTS public.Product (
 	Price numeric NOT NULL,
     PRIMARY KEY (ProductID)
 );
-```
-### :ticket: Create Table Voucher
-The voucher table presents information about a voucher. Besides being able to know the number of products, users will also get information about available vouchers. Users will get the voucher information about the name of the voucher and the amount of the discount on the voucher. Here is a description of the voucher table.
-
-| Attribute                  | Type                  | Description                     		       |
-|:---------------------------|:----------------------|:------------------------------------------------|
-| voucherid                  | character varying(11) | Id Voucher                       	       |
-| voucher_name               | text		     | Nama Voucher                  		       |
-| discount                   | integer		     | Besaran Diskon dari Setiap Voucher              |	
-
-with the SQL script :
-
-```sql
-CREATE TABLE IF NOT EXISTS public.Voucher (
-    VoucherID character varying(11) NOT NULL,
-    Voucher_name text NOT NULL,
-    Voucher_status text NOT NULL,
-	Discount integer NOT NULL,
-	CustomerID character varying(11) NOT NULL,
-	PRIMARY KEY (VoucherID),
-	FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
-);
-
 ```
 ### :computer: Create Table Transaction
 The transaction table presents information of transactions. Users can find out transaction ID, transaction date, total price of each transaction, quantity, customer ID, product ID, pay method ID, voucher ID, voucher status. The following is a description for each transaction table.
@@ -218,6 +153,70 @@ CREATE TABLE IF NOT EXISTS public.Voucher (
 	CustomerID character varying(11) NOT NULL,
 	PRIMARY KEY (VoucherID),
 	FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
+);
+```
+### :ticket: Create Table Voucher
+The voucher table presents information about a voucher. Besides being able to know the number of products, users will also get information about available vouchers. Users will get the voucher information about the name of the voucher and the amount of the discount on the voucher. Here is a description of the voucher table.
+
+| Attribute                  | Type                  | Description                     		       |
+|:---------------------------|:----------------------|:------------------------------------------------|
+| voucherid                  | character varying(11) | Id Voucher                       	       |
+| voucher_name               | text		     | Nama Voucher                  		       |
+| discount                   | integer		     | Besaran Diskon dari Setiap Voucher              |	
+
+with the SQL script :
+
+```sql
+CREATE TABLE IF NOT EXISTS public.Voucher (
+    VoucherID character varying(11) NOT NULL,
+    Voucher_name text NOT NULL,
+    Voucher_status text NOT NULL,
+	Discount integer NOT NULL,
+	CustomerID character varying(11) NOT NULL,
+	PRIMARY KEY (VoucherID),
+	FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
+);
+```
+### :credit_card: Create Table Pay_Method
+The pay_method table provides information to the users about payment methods which consist of 4 methods, there are card, PayPal, digital wallets and others from PMID and the method name of each ID. Here's a description for each pay_method table.
+
+| Attribute          | Type                  | Description                     |
+|:-------------------|:----------------------|:--------------------------------|
+| pmid               | character varying(11) | Id pay method                   |
+| method_name        | text		     | nama metode pembayaran	       |
+
+with the SQL script :
+
+```sql
+CREATE TABLE IF NOT EXISTS public.Pay_method (
+    PMID character varying(11) NOT NULL,
+    Method_name text NOT NULL,
+    Voucher_status text NOT NULL,
+	Discount integer NOT NULL,
+	CustomerID character varying(11) NOT NULL,
+	PRIMARY KEY (PMID),
+	FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
+);
+```
+### :couple: Create Table Customer
+The customer table provides information to the user regarding customer data, so that the user can find out the customer ID, gender, location which includes 4 locations, there are California, New York, Chicago, New Jersey and age range 17 - 63 years. Here is a description for each customer table. 
+
+| Attribute          | Type                  | Description                     |
+|:-------------------|:----------------------|:--------------------------------|
+| customerid         | character varying(11) | Id Customer                     |
+| gender             | character varying(11) | Jenis Kelamin                   |
+| locations          | text		     | Lokasi                          |
+| age		     | integer	 	     | Umur	                       |
+
+with the SQL script : 
+
+```sql
+CREATE TABLE IF NOT EXISTS public.Customer (
+    CustomerID character varying(11) NOT NULL,
+    Gender character varying(11) NOT NULL,
+    Locations text NOT NULL,
+	Age integer NOT NULL,
+    PRIMARY KEY (CustomerID)
 );
 ```
 ## :open_file_folder: Folder Structure
