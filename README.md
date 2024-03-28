@@ -13,8 +13,8 @@
 
 - [Information](#scroll-tentang)
 - [About](#blue_book-tentang)
-- [Screenshot](#rice_scene-screenshot)
-- [Demo](#dvd-demo)
+- [Screenshot](#camera-screenshot)
+- [Demo](#card_file_box-demo)
 - [Requirements](#exclamation-requirements)
 - [Database Scheme](#floppy_disk-skema-database)
 - [ERD](#rotating_light-erd)
@@ -38,7 +38,7 @@ Navigate through the menu at the top of the page to explore the available produc
 
 The final project of the Statistical Data Management course takes the topic of the Sigmaria Market Online Shop Database. The specifies project analysis of sales patterns of various products, transactions, vouchers and payment methods provided by the online shop. The dataset used in this project was sourced from Kaggle. The expected result is a database management platform in the form of a web application that can make it easier for users to improve and optimize analysis sales strategies. Users can search for data based on the desired category, e.g searching of various products, vouchers etc.
 
-## :rice_scene: Screenshot
+## :camera: Screenshot
 - Home
 <p align="center">
   <img width="900" height="500" src="Image/Screenshot Home.png">
@@ -65,7 +65,7 @@ The final project of the Statistical Data Management course takes the topic of t
 </p>
 
 
-## :dvd: Demo
+## :card_file_box: Demo
 
 The link of our shinnyapps or dashboard project : https://yudheeet1991.shinyapps.io/mdskel4app/#
 
