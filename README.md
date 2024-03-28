@@ -26,7 +26,7 @@
 :heartpulse: HELLO... OUR LOVELY USERS!! 
 WELCOME TO THE SIGMARIA MARKET! :wave:
 
-Here's a information about Sigmaria :
+**Here's a information about Sigmaria :**
 
 ## What is Sigmaria?
 Sigmaria Market is a platform that provides comprehensive information about sales transactions, available products, payment methods, vouchers, and customer data. This platform enables users to browse and acquire various products available in Sigmaria Market. With a wide range of products and recorded transaction information, Sigmaria Market presents up-to-date information about market activities that can assist users in making desired purchases. Additionally, the platform also offers recommendations for products that are suitable for customers.
@@ -39,7 +39,7 @@ Navigate through the menu at the top of the page to explore the available produc
 The final project of the Statistical Data Management course takes the topic of the Sigmaria Market Online Shop Database. The specifies project analysis of sales patterns of various products, transactions, vouchers and payment methods provided by the online shop. The dataset used in this project was sourced from Kaggle. The expected result is a database management platform in the form of a web application that can make it easier for users to improve and optimize analysis sales strategies. Users can search for data based on the desired category, e.g searching of various products, vouchers etc.
 
 ## :camera: Screenshot
-- Home
+**- Home**
 <p align="center">
   <img width="900" height="500" src="Image/Screenshot Home.png">
 </p>
