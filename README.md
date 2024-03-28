@@ -23,7 +23,7 @@
 - [Our Team](#smiley_cat-tim-pengembang)
 
 ## :pushpin: Information
-HELLO... THE LOVELY OUR USERS!! :heartpulse:
+:heartpulse: HELLO... THE LOVELY OUR USERS!! 
 WELCOME TO THE SIGMARIA MARKET! :wave:
 
 Here's a information about sigmaria :
