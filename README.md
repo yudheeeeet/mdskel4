@@ -72,9 +72,9 @@ The link of our shinnyapps or dashboard project : https://yudheeet1991.shinyapps
 
 ## :exclamation: Requirements
 
-- Data Scrapping used by package R `rvest` and other package e.g `tidyverse`,`rio`,`kableExtra` dan `stingr`  
+- Data Scrapping used by package R `rvest` and other package e.g `tidyverse`,`rio`,`kableExtra` and `stingr`  
 - The RDBMS are PostgreSQL and ElephantSQL
-- The Dashboard are `shinny`, `shinnythemes`, `bs4Dash`, `DT`, dan `dplyr` dari package R
+- The Dashboard are `shinny`, `shinnythemes`, `bs4Dash`, `DT`, and `dplyr` from package R
 
 ## :floppy_disk: Database Scheme 
 
