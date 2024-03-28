@@ -255,12 +255,14 @@ CREATE TABLE IF NOT EXISTS public.Customer (
   <img width="900" height="500" src="Image/TASYA.png">
 </p>
 
+- Technical Writer: [Yunna Mentari Indah](https://github.com/yunnamentari) (G1501231017)
+<p align="center">
+  <img width="900" height="500" src="Image/YUNNA.png">
+</p>
+
 - Frontend Developer: [Uswatun Hasanah](https://github.com/hhyuss) (G1501231040)
 <p align="center">
   <img width="900" height="500" src="Image/HUS.png">
 </p>
 
-- Technical Writer: [Yunna Mentari Indah](https://github.com/yunnamentari) (G1501231017)
-<p align="center">
-  <img width="900" height="500" src="Image/YUNNA.png">
-</p>
+
