@@ -23,6 +23,9 @@
 - [Our Team](#smiley_cat-tim-pengembang)
 
 ## :pushpin: Information
+HELLO... THE LOVELY OUR USERS!! :heartpulse:
+WELCOME TO SIGMARIA MARKET! :wave:
+Here's a information about sigmaria :
 
 ## What is Sigmaria?
 Sigmaria Market is a platform that provides comprehensive information about sales transactions, available products, payment methods, vouchers, and customer data. This platform enables users to browse and acquire various products available in Sigmaria Market. With a wide range of products and recorded transaction information, Sigmaria Market presents up-to-date information about market activities that can assist users in making desired purchases. Additionally, the platform also offers recommendations for products that are suitable for customers.
