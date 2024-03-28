@@ -11,8 +11,8 @@
 
 ## :bookmark_tabs: Menu
 
-- [Information](#scroll-tentang)
-- [About](#blue_book-tentang)
+- [Information](#pushpin-tentang)
+- [About](#clipboard-tentang)
 - [Screenshot](#camera-screenshot)
 - [Demo](#card_file_box-demo)
 - [Requirements](#exclamation-requirements)
@@ -20,7 +20,7 @@
 - [ERD](#rotating_light-erd)
 - [Data Description](#heavy_check_mark-deskripsi-data)
 - [Folder Structure](#open_file_folder-struktur-folder)
-- [Our Team](#smiley_cat-tim-pengembang)
+- [Our Team](#heavy_heart_exclamation-our-team)
 
 ## :pushpin: Information
 :heartpulse: HELLO... THE LOVELY OUR USERS!! 
