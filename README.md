@@ -32,7 +32,7 @@ Navigate through the menu at the top of the page to explore the available produc
 
 ## :clipboard: About
 
-Project akhir mata kuliah Manajemen Data Statistika mengambil topik tentang Database Sigmaria Market Online Shop. Project ini mengspesifikasikan analisis pola penjualan berbagai produk, customer, transaksi, metode pembayaran dan voucher yang disediakan dalam online shop. Kumpulan data yang digunakan dalam proyek ini bersumber dari Kaggle. Hasil yang diharapkan adalah terbentuknya sebuah platform manajemen database berupa web application yang dapat memudahkan user dalam menganalisis untuk meningkatkan dan mengoptimalkan strategi penjualan. User dapat mencari data berdasarkan kategori yang di inginkan, misalnya pencarian berbagai macam produk, voucher yang disediakan dan lain-lain.
+The final project of the Statistical Data Management course takes the topic of the Sigmaria Market Online Shop Database. The specifies project analysis of sales patterns of various products, transactions, vouchers and payment methods provided by the online shop. The dataset used in this project was sourced from Kaggle. The expected result is a database management platform in the form of a web application that can make it easier for users to improve and optimize analysis sales strategies. Users can search for data based on the desired category, for example searching for various products, vouchers etc.
 
 ## :rice_scene: Screenshot
 - Home
@@ -63,18 +63,18 @@ Project akhir mata kuliah Manajemen Data Statistika mengambil topik tentang Data
 
 ## :dvd: Demo
 
-Berikut merupakan link untuk shinnyapps atau dashboard dari project kami: https://yudheeet1991.shinyapps.io/mdskel4app/#
+The link of our project shinnyapps or dashboard : https://yudheeet1991.shinyapps.io/mdskel4app/#
 
 
 ## :exclamation: Requirements
 
-- Scrapping data menggunakan package R yaitu `rvest` dengan pendukung package lainnya seperti `tidyverse`,`rio`,`kableExtra` dan `stingr`  
-- RDBMS yang digunakan adalah PostgreSQL dan ElephantSQL
-- Dashboard menggunakan `shinny`, `shinnythemes`, `bs4Dash`, `DT`, dan `dplyr` dari package R
+- Data Scrapping used by package R `rvest` and other package e.g `tidyverse`,`rio`,`kableExtra` dan `stingr`  
+- The RDBMS are PostgreSQL and ElephantSQL
+- The Dashboard are `shinny`, `shinnythemes`, `bs4Dash`, `DT`, dan `dplyr` dari package R
 
 ## :floppy_disk: Database Scheme 
 
-Menggambarkan struktur *primary key* **customer**, **voucher**, **pay_method** dan **product** dengan *foreign key* **transaction** dalam membangun relasi antara tabel atau entitas.
+Structure description of *primary key* **customer**, **voucher**, **pay_method** and **product** also *foreign key* **transaction** in establishing relationships between tables or entities.
 
 <p align="center">
   <img width="600" height="400" src="Image/Rplot.png">
@@ -82,7 +82,7 @@ Menggambarkan struktur *primary key* **customer**, **voucher**, **pay_method** d
 
 ## :rotating_light: ERD
 
-ERD (Entity Relationship Diagram) menampilkan hubungan antara entitas dengan atribut. Pada project ini, seluruh atribut pada entitas produk, customer, voucher, dan metode pembayaran berhubungan dengan entitas transaksi.
+ERD (Entity Relationship Diagram) describes the relationship between entities and attributes. In this project, all attributes of the product, customer, voucher and payment method entities are related to the transaction entity.
 
 <p align="center">
   <img width="600" height="400" src="Image/online_shop_erd.png">
